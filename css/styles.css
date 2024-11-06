@@ -3680,13 +3680,14 @@ textarea.form-control-lg {
     border-radius: 6px; /* Ajustement du border-radius */
     overflow: hidden;
     position: relative; /* Change position pour ne pas chevaucher */
-    top: 140px !important; /* Ajuste l'espace en haut */
-    left: 250px !important; /* Alignement plus à gauche */
+    top: 70px !important; /* Ajuste l'espace en haut */
+    left: 210px !important; /* Alignement plus à gauche */
     padding: 1%;
     width: auto !important;
   }
 
   .profile-img {
+    max-height: 80px;
     height: 80px !important;/* Déplacé depuis le style en ligne */
     width: auto !important;/* Déplacé depuis le style en ligne */
   }
