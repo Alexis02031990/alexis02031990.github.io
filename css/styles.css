@@ -3680,7 +3680,7 @@ textarea.form-control-lg {
     border-radius: 6px; /* Ajustement du border-radius */
     overflow: hidden;
     position: relative; /* Change position pour ne pas chevaucher */
-    top: 70px !important; /* Ajuste l'espace en haut */
+    top: 90px !important; /* Ajuste l'espace en haut */
     left: 210px !important; /* Alignement plus à gauche */
     padding: 1%;
     width: auto !important;
@@ -10874,11 +10874,6 @@ footer {
 .text-justify {
   text-align: justify;
 }
-.carousel-inner img ,.video-container{
-  width: 100%;
-  height: 200px; /* Hauteur souhaitée */
-  background-color: #f8f9fa; /* Optionnel : définit un fond neutre si des marges apparaissent */
-}
 
 .bg-black{
   background-color: var(--bs-dark);
@@ -10966,3 +10961,12 @@ body, html {
 .recule-droite_2{
   margin-left: 40%;
 }
+/* Limiter la taille de la vidéo pour éviter qu'elle ne prenne trop de place */
+.video-container video {
+  max-width: 100%;     /* Limite la largeur à 100% de son conteneur */
+  max-height: 180px;   /* Hauteur maximale de la vidéo */
+  width: auto;         /* Maintenir le ratio d'aspect */
+  height: auto;
+}
+
+
