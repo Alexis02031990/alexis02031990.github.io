@@ -3641,55 +3641,148 @@ textarea.form-control-lg {
 
 /* CSS existant pour .badge */
 .badge {
-  --bs-badge-padding-x: 0.65em;
-  --bs-badge-padding-y: 0.35em;
-  --bs-badge-font-size: 0.75em;
-  --bs-badge-font-weight: 700;
-  --bs-badge-color: #fff;
-  --bs-badge-border-radius: 0.375rem;
   display: inline-flex;
-  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
-  font-size: var(--bs-badge-font-size);
-  font-weight: var(--bs-badge-font-weight);
-  line-height: 1;
-  color: var(--bs-badge-color);
   text-align: center;
   white-space: normal; /* Permet le retour à la ligne */
-  vertical-align: baseline;
-  border-radius: var(--bs-badge-border-radius);
-  word-break: break-word; /* Permet de couper les mots si nécessaire */
 }
 
-@media (max-width: 576px) {
-  .badge {
-    font-size: 0.65em; /* Taille réduite pour éviter le débordement */
-    padding: 0.5em; /* Réduit le padding pour s'adapter à l'écran */
+@media (min-width: 344px) {
+  /* CSS existant pour .badge */
+  .badge,.title {
+    display: inline-flex;
+    text-align: center;
+    white-space: normal; /* Permet le retour à la ligne */
+    font-size: 12px;
   }
-
-  .badge .text-uppercase {
-    font-size: 1rem; /* Ajuste la taille pour que le texte s'affiche sur plusieurs lignes */
-  }
-
-  .d-flex, h2, .btn {
-    word-break: break-word; /* Assure que tout le contenu s'adapte à la largeur de l'écran */
-  }
-
   .profile {
-    max-width: 100px; /* Taille réduite pour mobile */
-    max-height: 90px; /* Taille réduite pour mobile */
+    max-width: 150px; /* Taille réduite pour mobile */
+    max-height: 150px; /* Taille réduite pour mobile */
     border-radius: 6px; /* Ajustement du border-radius */
     overflow: hidden;
     position: relative; /* Change position pour ne pas chevaucher */
-    top: 90px !important; /* Ajuste l'espace en haut */
-    left: 210px !important; /* Alignement plus à gauche */
+    top: 13vw !important; /* Ajuste l'espace en haut */
+    left: -12vw !important; /* Alignement plus à gauche */
     padding: 1%;
-    width: auto !important;
+    width: 20vw !important;
+    height: 20vw !important;
   }
 
   .profile-img {
     max-height: 80px;
-    height: 80px !important;/* Déplacé depuis le style en ligne */
+    height: 70px !important;/* Déplacé depuis le style en ligne */
     width: auto !important;/* Déplacé depuis le style en ligne */
+  }
+}
+@media (min-width: 540px) {
+  /* CSS existant pour .badge */
+  .badge,.title {
+    display: inline-flex;
+    text-align: center;
+    white-space: normal; /* Permet le retour à la ligne */
+    font-size: 8px !important;
+  }
+  .profile {
+    max-width: 150px; /* Taille réduite pour mobile */
+    max-height: 150px; /* Taille réduite pour mobile */
+    border-radius: 6px; /* Ajustement du border-radius */
+    overflow: hidden;
+    position: relative; /* Change position pour ne pas chevaucher */
+    top: -8vw !important; /* Ajuste l'espace en haut */
+    left: -10vw !important; /* Alignement plus à gauche */
+    padding: 1%;
+    width: 20vw !important;
+    height: 20vw !important;
+  }
+
+  .profile-img {
+    max-height: 250px;
+    height: 100px !important;/* Déplacé depuis le style en ligne */
+    width: auto !important;/* Déplacé depuis le style en ligne */
+  }
+}
+
+@media (min-width: 768px) {
+  /* CSS existant pour .badge */
+  .badge,.title {
+    display: inline-flex;
+    text-align: center;
+    white-space: normal; /* Permet le retour à la ligne */
+    font-size: 12px !important;
+    margin-left: 10px;
+  }
+  .profile {
+    max-width: 250px; /* Taille réduite pour mobile */
+    max-height: 250px; /* Taille réduite pour mobile */
+    border-radius: 6px; /* Ajustement du border-radius */
+    overflow: hidden;
+    position: relative; /* Change position pour ne pas chevaucher */
+    top: 1vw !important; /* Ajuste l'espace en haut */
+    left: -7vw !important; /* Alignement plus à gauche */
+    padding: 1%;
+    width: 20vw !important;
+    height: 20vw !important;
+  }
+
+  .profile-img {
+    max-height: 500px;
+    height: 150px !important;/* Déplacé depuis le style en ligne */
+    width: auto !important;/* Déplacé depuis le style en ligne */
+  }
+}
+@media (min-width: 1024px) {
+  /* CSS existant pour .badge */
+  .badge,.title {
+    display: inline-flex;
+    text-align: center;
+    white-space: normal; /* Permet le retour à la ligne */
+    font-size: 18px !important;
+    }
+  .profile {
+    position: relative;
+    height: 45vw;
+    width: 45vw;
+    border-radius: 1vw;
+    max-height: 10rem;
+    max-width: 10rem;
+    margin-left: 1vw;
+    margin-top: -3vw;
+  }
+  .profile .profile-img {
+    height: 15vw !important;
+    max-height: 20rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1280px) {
+  /* CSS existant pour .badge */
+  .badge,.title {
+    display: inline-flex;
+    text-align: center;
+    white-space: normal; /* Permet le retour à la ligne */
+    font-size: 18px !important;
+    margin-left: 10px;
+  }
+  .profile {
+    position: relative;
+    height: 45vw;
+    width: 45vw;
+    border-radius: 1vw;
+    max-height: 15rem;
+    max-width: 15rem;
+    margin-left: 5vw;
+    margin-top: -3vw;
+  }
+  .profile .profile-img {
+    height: 13vw !important;
+    max-height: 20rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -10686,27 +10779,12 @@ html {
   font-size: 1.5rem;
 }
 
-.profile {
-  overflow: hidden;
-  position: absolute; /* Permet de positionner l'élément précisément */
-  top: 150px; /* Ajuste l'espace en haut */
-  left: 5px; /* Ajuste l'espace sur la gauche */
-  padding: 2%;
-  height: 160px !important; /* Force la taille */
-  width: 160px !important; /* Force la taille */
-}
-
-.profile-img {
-  height: 150px !important;/* Déplacé depuis le style en ligne */
-  width: auto !important;/* Déplacé depuis le style en ligne */
-}
-
 
 .profile .dots-1 {
   position: absolute;
   width: 3vw;
-  right: 1.5vw;
-  top: 4vw;
+  right: 2.05vw;
+  top: 6vw;
 }
 .profile .dots-1 svg {
   fill: #fff;
@@ -10715,7 +10793,7 @@ html {
   position: absolute;
   width: 3vw;
   right: -4vw;
-  top: 6.05vw;
+  top: 4.05vw;
 }
 .profile .dots-2 svg {
   fill: #1e30f3;
@@ -10724,7 +10802,7 @@ html {
   position: absolute;
   width: 3vw;
   left: 1.5vw;
-  bottom: 6.05vw;
+  bottom: 2.05vw;
 }
 .profile .dots-3 svg {
   fill: #fff;
@@ -10733,7 +10811,7 @@ html {
   position: absolute;
   width: 3vw;
   left: -4vw;
-  bottom: 4vw;
+  bottom: 1vw;
 }
 .profile .dots-4 svg {
   fill: #1e30f3;
