@@ -11042,9 +11042,9 @@ body, html {
 /* Limiter la taille de la vidéo pour éviter qu'elle ne prenne trop de place */
 .video-container video {
   max-width: 100%;     /* Limite la largeur à 100% de son conteneur */
-  max-height: 180px;   /* Hauteur maximale de la vidéo */
-  width: auto;         /* Maintenir le ratio d'aspect */
-  height: auto;
+  max-height: 250px;   /* Hauteur maximale de la vidéo */
+  width: 600px;         /* Maintenir le ratio d'aspect */
+  height: 400px;
 }
 
 
