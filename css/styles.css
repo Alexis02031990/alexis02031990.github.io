@@ -3921,15 +3921,17 @@ textarea.form-control-lg {
   }
 }
 
-.bg-dark,.navbar{
+.navbar{
   /* Dégradé en arrière-plan */
-  background: linear-gradient(60deg,#101214,#13653f,#e21e80,#6610f2,#ffc107,#fd7e14,#6d0e3e,#000, #ff7e5f, #feb47b, #86a8e7, #91eac9);
+  /* background: linear-gradient(60deg,#101214,#13653f,#e21e80,#6610f2,#ffc107,#fd7e14,#6d0e3e,#000, #ff7e5f, #feb47b, #86a8e7, #91eac9); */
+  background: #141619;
   background-size: 500% 500%;
   animation: gradientAnimation 220s ease infinite;
 }
 .section-experience{
    /* Dégradé en arrière-plan */
-   background: linear-gradient(60deg,#101214,#13653f,#e21e80,#6610f2,#ffc107,#fd7e14,#6d0e3e,#000, #ff7e5f, #feb47b, #86a8e7, #91eac9);
+   /* background: linear-gradient(60deg,#101214,#13653f,#e21e80,#6610f2,#ffc107,#fd7e14,#6d0e3e,#000, #ff7e5f, #feb47b, #86a8e7, #91eac9); */
+   background: #bcbebf;
    background-size: 500% 500%;
    animation: gradientAnimation 10s ease infinite;
 }
@@ -7386,12 +7388,12 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-secondary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-success {
@@ -7512,7 +7514,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
@@ -10757,7 +10759,7 @@ html {
 
 .bg-gradient-primary-to-secondary {
   background: #1e30f3;
-  background: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+  background: linear-gradient(#1e30f3 0%);
 }
 
 .text-gradient {
@@ -10965,7 +10967,7 @@ footer {
 }
 
 .logo-wrapper {
-  background: linear-gradient(to right, #4e73df, #1cc88a); /* Replace with your gradient */
+  /* background: linear-gradient(to right, #4e73df, #1cc88a); Replace with your gradient */
   padding: 1rem;
   max-width: 100%;
   border-radius: 8px;
