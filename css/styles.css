@@ -11058,7 +11058,7 @@ body, html {
 .count-tag {
     position: relative;
     margin-top: -20%;  
-    left: 85%;  /* Distance du côté gauche de l'écran */
+    left: 80%;  /* Distance du côté gauche de l'écran */
     z-index: 10;
 }
 

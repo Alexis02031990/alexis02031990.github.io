@@ -137,9 +137,10 @@
                         </div>
                         <div class="counter-container">
                             <div class="count-tag">
+                                <h1>Cette semaine</h1>
                                 <h1>Vues: <span id="counter"></span></h1>
                             </div>
-                        </div>
+                        </div>      
                         
                         <div class="d-flex justify-content-start align-items-center flex-wrap" style="margin-top: -120px;">
                             <div class="col-12 col-lg-8 col-xl-6 text-center">
@@ -229,17 +230,38 @@
         <script src="js/scripts.js"></script>
 
         <script>
-            // Vérifie si la clé "visite_count" existe dans localStorage
-            if (localStorage.getItem('visite_count')) {
-                let count = parseInt(localStorage.getItem('visite_count'));
-                count++;
-                localStorage.setItem('visite_count', count); // Met à jour la valeur dans localStorage
+            // Récupère la date actuelle
+            const currentDate = new Date();
+        
+            // Vérifie si la date de la dernière mise à jour existe
+            const lastUpdateDate = localStorage.getItem('last_update_date');
+            const lastVisitCount = parseInt(localStorage.getItem('visite_count')) || 0;
+        
+            // Si la date de mise à jour existe et que 7 jours se sont écoulés
+            if (lastUpdateDate) {
+                const lastDate = new Date(lastUpdateDate);
+                const diffTime = Math.abs(currentDate - lastDate);  // Différence de temps en millisecondes
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Convertit en jours
+        
+                if (diffDays >= 7) {
+                    // Si 7 jours se sont écoulés, réinitialise le compteur et la date
+                    localStorage.setItem('visite_count', 1); // Réinitialise le compteur
+                    localStorage.setItem('last_update_date', currentDate.toISOString()); // Enregistre la nouvelle date
+                }
             } else {
-                localStorage.setItem('visite_count', 1); // Si aucune visite n'a été comptée
+                // Si aucune date de mise à jour n'existe, enregistre la date et initialise le compteur
+                localStorage.setItem('last_update_date', currentDate.toISOString());
+                localStorage.setItem('visite_count', 1);
             }
-
+        
+            // Récupère et affiche le nombre de visites
+            let count = parseInt(localStorage.getItem('visite_count')) || 0;
+            count++;
+            localStorage.setItem('visite_count', count);  // Met à jour le compteur de visites
+        
             // Affiche le nombre de visites
-            document.getElementById('counter').textContent = localStorage.getItem('visite_count');
+            document.getElementById('counter').textContent = count;
         </script>
+  
     </body>
 </html>
