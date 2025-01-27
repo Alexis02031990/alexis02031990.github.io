@@ -11056,8 +11056,8 @@ body, html {
 
 .count-tag {
     position: absolute;
-    left: 20px;  /* Ajuste la valeur pour le positionnement souhaité */
-    top: 50%;
+    left: 75%;  /* Ajuste la valeur pour le positionnement souhaité */
+    top: 25%;
     transform: translateY(-50%);
     z-index: 10;
 }
