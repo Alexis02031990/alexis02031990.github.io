@@ -3747,13 +3747,10 @@ textarea.form-control-lg {
     margin-left: 1vw;
     margin-top: -3vw;
   }
-  .profile .profile-img {
-    height: 15vw !important;
-    max-height: 20rem;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  .profile-img {
+    max-height: 500px;
+    height: 150px !important;/* Déplacé depuis le style en ligne */
+    width: auto !important;/* Déplacé depuis le style en ligne */
   }
 }
 
@@ -3776,13 +3773,15 @@ textarea.form-control-lg {
     margin-left: 5vw;
     margin-top: -3vw;
   }
+  /* Profile image */
   .profile .profile-img {
-    height: 13vw !important;
-    max-height: 20rem;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+     height: 15vw; /* Utilisation de 'vw' pour la hauteur dynamique */
+     max-height: 20rem;
+     width: auto;  /* Laisse la largeur s'ajuster proportionnellement */
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%); /* Centre l'image horizontalement */
   }
 }
 
