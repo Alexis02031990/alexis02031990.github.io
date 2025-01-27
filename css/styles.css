@@ -11056,8 +11056,8 @@ body, html {
 
 .count-tag {
     position: relative; /* Ou absolute si nécessaire */
-    left: 50%;  /* Assurez-vous que le compteur soit bien à gauche */
-    top: 25%;
+    left: 80%;  /* Assurez-vous que le compteur soit bien à gauche */
+    margin-top: -20%;
     transform: translateY(-50%);
     z-index: 10;
 }
