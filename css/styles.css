@@ -11052,21 +11052,25 @@ body, html {
 .counter-container {
     display: flex;
     align-items: center;
+    width: 100%;  /* L'élément prendra toute la largeur disponible */
 }
 
 .count-tag {
-    position: relative; /* Ou absolute si nécessaire */
-    left: 80%;  /* Assurez-vous que le compteur soit bien à gauche */
-    margin-top: -20%;
-    transform: translateY(-50%);
+    position: relative;
+    margin-top: -20%;  
+    left: 85%;  /* Distance du côté gauche de l'écran */
     z-index: 10;
 }
 
 .count-tag img {
-    max-width: 100px; /* Ajuste la taille si nécessaire */
+    max-width: 100px;
     height: auto;
     border: 2px solid #fff; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
 
