@@ -135,12 +135,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="counter-container">
-                            <div class="count-tag">
-                                <h1>Cette semaine</h1>
-                                <h1>Vues: <span id="counter"></span></h1>
-                            </div>
-                        </div>      
+                        <div id="sfcfnl2dyfwktwdpsnun87cb8m4dtnjze1m"></div>
+                        <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=fnl2dyfwktwdpsnun87cb8m4dtnjze1m&down=async" async>
+                        </script><br><a href="https://www.compteurdevisite.com"></a>
+                        <noscript>
+                            <a href="https://www.compteurdevisite.com" title="compteur web">
+                             <img src="https://counter6.optistats.ovh/private/compteurdevisite.php?c=fnl2dyfwktwdpsnun87cb8m4dtnjze1m" border="0" title="compteur web" alt="compteur web">
+                            </a>
+                        </noscript>
                         <div class="d-flex justify-content-start align-items-center flex-wrap" style="margin-top: -120px;">
                             <div class="col-12 col-lg-8 col-xl-6 text-center">
                                 <br>
@@ -227,40 +229,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Script principal-->
         <script src="js/scripts.js"></script>
-
-        <script>
-            // Récupère la date actuelle
-            const currentDate = new Date();
-        
-            // Vérifie si la date de la dernière mise à jour existe
-            const lastUpdateDate = localStorage.getItem('last_update_date');
-            const lastVisitCount = parseInt(localStorage.getItem('visite_count')) || 0;
-        
-            // Si la date de mise à jour existe et que 7 jours se sont écoulés
-            if (lastUpdateDate) {
-                const lastDate = new Date(lastUpdateDate);
-                const diffTime = Math.abs(currentDate - lastDate);  // Différence de temps en millisecondes
-                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Convertit en jours
-        
-                if (diffDays >= 7) {
-                    // Si 7 jours se sont écoulés, réinitialise le compteur et la date
-                    localStorage.setItem('visite_count', 1); // Réinitialise le compteur
-                    localStorage.setItem('last_update_date', currentDate.toISOString()); // Enregistre la nouvelle date
-                }
-            } else {
-                // Si aucune date de mise à jour n'existe, enregistre la date et initialise le compteur
-                localStorage.setItem('last_update_date', currentDate.toISOString());
-                localStorage.setItem('visite_count', 1);
-            }
-        
-            // Récupère et affiche le nombre de visites
-            let count = parseInt(localStorage.getItem('visite_count')) || 0;
-            count++;
-            localStorage.setItem('visite_count', count);  // Met à jour le compteur de visites
-        
-            // Affiche le nombre de visites
-            document.getElementById('counter').textContent = count;
-        </script>
   
     </body>
 </html>
