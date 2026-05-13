@@ -16,38 +16,102 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583"
-        crossorigin="anonymous"></script>
-           <script async custom-element="amp-auto-ads"
-           src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-       </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583" crossorigin="anonymous"></script>
+        <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     </head>
-    <body class="d-flex flex-column h-100 bg-light" style="background-image: ('assets/image.jpg');">
+    <body class="d-flex flex-column h-100 bg-light" style="background-image: url('assets/image.jpg');">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light  py-3">
+            <nav class="navbar navbar-expand-lg navbar-light py-3">
                 <div class="container px-5">
                     <div class="feature bg-primary bg-primary-to-secondary text-white rounded-3 mb-3">
                         <i class="bi bi-person"></i>
                     </div>
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-white">Alexis NGUEFACK</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <a class="navbar-brand" href="index.html">
+                        <span class="fw-bolder text-white">Alexis NGUEFACK</span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Mon CV</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Mes Projets</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="resume.html">Mon CV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="projects.html">Mes Projets</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </nav>
 
+            <!-- Projet 2 : Application de pronostics des matchs -->
+            <div class="card shadow border-0 rounded-4 mb-5">
+                <div class="card-body p-5 d-flex flex-wrap">
+                    <!-- Description du projet à gauche -->
+                    <div class="col-md-6 me-3">
+                        <h3 class="text-success">
+                            <strong>Projet Personnel - Projet de création d’une plateforme sociale dédiée aux pronostics.</strong>
+                        </h3>
+                        <p><strong>2025 | Développement en cours</strong></p>
+                        <p><strong>Réalisé en utilisant ASP.NET Core et Entity Framework-Angular 19</strong></p>
+                        <div>
+                            <strong class="text-gradient">Description du projet :</strong>
+                            <p>L’objectif de cette plateforme sociale dédiée aux pronostics de matchs est de permettre aux pronostiqueurs de créer et publier leurs analyses et prédictions, tandis que les parieurs pourront consulter ces pronostics, les acheter ou s’abonner aux profils qu’ils jugent pertinents et fiables.</p>
+                        </div>
+                        <div>
+                            <strong class="text-gradient">Missions :</strong>
+                            <ul>
+                                <li>Définition des besoins fonctionnels de la plateforme.</li>
+                                <li>Élaboration de l’architecture logicielle en respectant les principes SOLID.</li>
+                                <li>Conception des parcours utilisateurs (UX) et des wireframes.</li>
+                                <li>Développement des modules principaux (Page d'identification, Espace personnel, modules d’achats, d’abonnement et de paiement, fonctionnalités sociales, etc.)</li>
+                                <li>Création d’un back-office pour la modération des contenus (signalements, suppression).</li>
+                                <li>Gestion des utilisateurs, statistiques d’utilisation, et contrôle des transactions.</li>
+                                <li>Modélisation et création de la base de données sous SQL Server.</li>
+                                <li>Mise en place de la persistance des données via Entity Framework.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-gradient">Technologies et fonctionnalités :</strong>
+                            <p>Utilisation de ADO.NET et Entity Framework pour les migrations et la gestion des relations entre les tables avec <code>ICollection</code> dans les modèles. Mise en place d’un système d’authentification via .NET Identity pour la gestion des utilisateurs et des rôles.</p>
+                        </div>
+                        <div>
+                            <strong class="text-gradient">Objectifs :</strong>
+                            <p>Créer une solution complète de gestion d'utilisateurs, intégrant des fonctionnalités avancées de gestion des parieurs, des pronostiqueurs et des administrateurs, tout en améliorant mes compétences en ASP.NET Core, Angular et Entity Framework.</p>
+                        </div>
+                        <div>
+                            <strong class="text-gradient">Cliquez ici pour voir à quoi ressemble le projet :</strong>
+                            <a href="https://black-meadow-0bb5e6b03.7.azurestaticapps.net/" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
+                                Voir le projet en ligne
+                            </a>
+                            <!--
+                            <a href="https://github.com/Alexis02031990/Betwise.git" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
+                                cliquez ici: Back-end: Betwise prono
+                            </a>
+                            <a href="https://github.com/Alexis02031990/betwise-angular-front.git" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
+                                cliquez ici: Front-end: Betwise prono
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Section Projets -->
             <section class="py-5">
                 <div class="container px-5 mb-5">
                     <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projets</span></h1>
+                        <h1 class="display-5 fw-bolder mb-0">
+                            <span class="text-gradient d-inline">Projets</span>
+                        </h1>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
@@ -56,7 +120,9 @@
                                 <div class="card-body p-5 d-flex flex-wrap">
                                     <!-- Description du projet à gauche -->
                                     <div class="col-md-12 me-3">
-                                        <h3 class="text-success"><strong>Projet Personnel : ERP de Gestion des Stocks</strong></h3>
+                                        <h3 class="text-success">
+                                            <strong>Projet Personnel : ERP de Gestion des Stocks</strong>
+                                        </h3>
                                         <p><strong>2024</strong></p>
                                         <p><strong>Réalisé pendant les heures libres</strong></p>
                                         <div>
@@ -86,7 +152,7 @@
                                             <strong class="text-gradient">Dépôt GitHub :</strong>
                                             <a href="https://github.com/Alexis02031990/GestionDeStock" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
                                                 cliquez ici: Gestion de stock
-                                            </a>                                            
+                                            </a>
                                         </div>
                                     </div>
                                     <!-- Diaporama d'images et vidéo à droite -->
@@ -94,28 +160,28 @@
                                         <div id="carouselExample" class="carousel slide mb-3" data-bs-ride="carousel">
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
-                                                    <img src="assets/dashboard.PNG" class="d-block w-100" alt="Image 1">
+                                                    <img src="assets/dashboard.PNG" class="d-block w-100" alt="Image 1" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/connexion.PNG" class="d-block w-100" alt="Image 2">
+                                                    <img src="assets/connexion.PNG" class="d-block w-100" alt="Image 2" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/dashbord_2.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/dashbord_2.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/client.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/client.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/produit.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/produit.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/categorie.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/categorie.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/commande.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/commande.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="assets/users.PNG" class="d-block w-100" alt="Image 3">
+                                                    <img src="assets/users.PNG" class="d-block w-100" alt="Image 3" />
                                                 </div>
                                             </div>
                                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -127,118 +193,18 @@
                                                 <span class="visually-hidden">Suivant</span>
                                             </button>
                                         </div>
-                                       <!-- Conteneur pour le texte et la vidéo -->
+                                        <!-- Conteneur pour le texte et la vidéo -->
                                         <div class="video-presentation-container text-center">
-                                            <h2 class="text-gradient"><strong>Vidéo de présentation du projet</strong></h2>
+                                            <h2 class="text-gradient">
+                                                <strong>Vidéo de présentation du projet</strong>
+                                            </h2>
                                             <div class="video-container">
                                                 <video controls poster="https://dummyimage.com/200x300/343a40/6c757d">
-                                                    <source src="assets/Mon Projet ERP.mp4" type="video/mp4">
+                                                    <source src="assets/Mon Projet ERP.mp4" type="video/mp4" />
                                                     Votre navigateur ne supporte pas la vidéo HTML5.
                                                 </video>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Projet 2 : Application de Vente de Voitures -->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5 d-flex flex-wrap">
-                                    <!-- Description du projet à gauche -->
-                                    <div class="col-md-6 me-3">
-                                        <h3 class="text-success"><strong>Projet Personnel - Projet de création d’une plateforme sociale dédiée aux pronostics.</strong></h3>
-                                        <p><strong>2025 | Développement en cours</strong></p>
-                                        <p><strong>Réalisé en utilisant ASP.NET Core et Entity Framework-Angular 19</strong></p>
-                                        <div>
-                                            <strong class="text-gradient">Description du projet :</strong>
-                                            <p>. L’objectif de cette plateforme sociale dédiée aux pronostics de matchs est de permettre aux pronostiqueurs de créer et publier leurs analyses et prédictions, tandis que les parieurs pourront consulter ces pronostics, les acheter ou s’abonner aux profils qu’ils jugent pertinents et fiables.</p>
-                                        </div>
-                                        <div>
-                                            <strong class="text-gradient">Missions :</strong>
-                                            <ul>
-                                                <li>Définition des besoins fonctionnels de la plateforme.</li>
-                                                <li>Élaboration de l’architecture logicielle en respectant les principes SOLID.</li>
-                                                <li>Conception des parcours utilisateurs (UX) et des wireframes.</li>
-                                                <li>Développement des modules principaux (Page d'identification, Espace personnel, modules d’achats, d’abonnement et de paiement, fonctionnalités sociales, etc.)</li>
-                                                <li>Création d’un back-office pour la modération des contenus (signalements, suppression).</li>
-                                                <li>Gestion des utilisateurs, statistiques d’utilisation, et contrôle des transactions</li>
-                                                <li>Modélisation et création de la base de données sous SQL Server.</li>
-                                                <li>Mise en place de la persistance des données via Entity Framework.</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <strong class="text-gradient">Technologies et fonctionnalités :</strong>
-                                            <p>Utilisation de ADO.NET et Entity Framework pour les migrations et la gestion des relations entre les tables avec <code>ICollection</code> dans les modèles. Mise en place d’un système d’authentification via .NET Identity pour la gestion des utilisateurs et des rôles.</p>
-                                        </div>
-                                        <div>
-                                            <strong class="text-gradient">Objectifs :</strong>
-                                            <p>Créer une solution complète de gestion d'utilisateurs', intégrant des fonctionnalités avancées de gestion des parieurs,des pronostiqueurs et des administrateurs, tout en améliorant mes compétences en ASP.NET Core - Angular et Entity Framework.</p>
-                                        </div>
-                                        <div>
-                                            <strong class="text-gradient">Dépôt GitHub :</strong>
-                                            <a href="https://github.com/Alexis02031990/Betwise.git" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
-                                                cliquez ici: Back-end: Betwise prono
-                                            </a>
-                                           <a href="https://github.com/Alexis02031990/betwise-angular-front.git" target="_blank" rel="noopener" class="text-decoration-underline text-primary">
-                                                cliquez ici: Front-end: Betwise prono
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- Diaporama d'images et vidéo à droite -->
-                                    <!-- <div class="col-md-5">
-                                        <div id="carouselExampleVente" class="carousel slide mb-3" data-bs-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <img src="assets/image-1.PNG" class="d-block w-100" alt="Image 1">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image2.PNG" class="d-block w-100" alt="Image 2">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image3.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image4.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image5.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image6.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image7.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image8.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image9.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                                <div class="carousel-item">
-                                                    <img src="assets/image10.PNG" class="d-block w-100" alt="Image 3">
-                                                </div>
-                                            </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleVente" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Précédent</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleVente" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Suivant</span>
-                                            </button>
-                                        </div>-->
-                                
-                                       <!-- Conteneur pour le texte et la vidéo -->
-                                        <!-- <div class="video-presentation-container text-center">
-                                            <h2 class="text-gradient"><strong>Vidéo de présentation du projet</strong></h2>
-                                            <div class="video-container">
-                                                <video controls poster="https://dummyimage.com/200x300/343a40/6c757d">
-                                                    <source src="assets/Mon Projet ERP.mp4" type="video/mp4">
-                                                    Votre navigateur ne supporte pas la vidéo HTML5.
-                                                </video>
-                                            </div>
-                                        </div>  -->
                                     </div>
                                 </div>
                             </div>
@@ -246,8 +212,6 @@
                     </div>
                 </div>
             </section>
-
-
 
             <!-- Call to action section-->
             <section class="py-5 bg-gradient-primary-to-secondary text-white">
@@ -259,11 +223,14 @@
                 </div>
             </section>
         </main>
+
         <!-- Footer-->
         <footer class="text-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><small>&copy; 2025 Mon Portfolio</small></div>
+                    <div class="col-auto">
+                        <small>&copy; 2025 Mon Portfolio</small>
+                    </div>
                     <div class="col-auto">
                         <a class="small text-white" href="#!">Privacy</a>
                         <span class="mx-1 text-white">·</span>
@@ -279,8 +246,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <amp-auto-ads type="adsense" data-ad-client="ca-pub-2500102972187583"></amp-auto-ads>
     </body>
-    <amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-2500102972187583">
-    </amp-auto-ads>
-</html>
