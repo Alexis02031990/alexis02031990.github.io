@@ -154,26 +154,26 @@
                             </div>
                         </div>
 
-                        <div id="sfcg5r77n8laf1ubpy55w7jdxtuyn1u2xmf"></div>
-                        <script type="text/javascript" src="https://counter6.optistats.ovh/private/counter.js?c=g5r77n8laf1ubpy55w7jdxtuyn1u2xmf&down=async" async></script>
                         <br>
                         <noscript>
                             <a href="https://www.compteurdevisite.com" title="compteur visite gratuit">
-                                <img src="https://counter6.optistats.ovh/private/compteurdevisite.php?c=g5r77n8laf1ubpy55w7jdxtuyn1u2xmf" border="0" title="compteur visite gratuit" alt="compteur visite gratuit" />
+                                <img src="https://counter6.optistats.ovh/private/compteurdevisite.php?c=g5r77n8laf1ubpy55w7jdxtuyn1u2xmf" border="0" title="compteur visite gratuit" alt="compteur visite gratuit" style="display: none;" />
                             </a>
                         </noscript>
 
                         <div class="d-flex justify-content-start align-items-center flex-wrap" style="margin-top: -120px;">
-                            <div class="col-12 col-lg-8 col-xl-6 text-center">
+                        <div class="col-12 col-lg-8 col-xl-6 text-center">
                                 <br>
                                     <div class="badge bg-gradient-primary-to-secondary text-white mb-4 rounded fs-4 px-3 py-2">
                                         <div class="text-center title">ANALYSTE CONCEPTEUR DEVELOPPEUR C#.NET - IBM i / AS400</div>
                                     </div>
-                                    <div class="badge bg-success text-white mb-4 rounded fs-6 px-3 py-2">
-                                        <div class="text-center">✓ Actuellement en CDI chez Toyota</div>
-                                    </div>
-                                    <div class="text-white mb-3 rounded px-3 py-2" style="font-size: 0.95rem;">
-                                        <div class="text-center">💼 Ouvert à des missions en freelance ou portage salarial</div>
+                                    <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                                        <div class="badge bg-success text-white rounded fs-6 px-3 py-2">
+                                            <div class="text-center">✓ Actuellement en CDI chez Toyota</div>
+                                        </div>
+                                        <div class="badge bg-info text-white rounded px-3 py-2" style="font-size: 0.95rem;">
+                                            <div class="text-center">💼 Ouvert à des missions en freelance ou portage salarial</div>
+                                        </div>
                                     </div>
                                 <br>
                                 <div class="fs-3 fw-light text-center">
@@ -248,7 +248,10 @@
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto">
-                        <small>&copy; 2025 Mon Portfolio</small>
+                        <small>&copy; 2026 Mon Portfolio</small>
+                    </div>
+                    <div class="col-auto">
+                        <small class="text-muted">👁️ Visiteurs: <span id="visitor-count">0</span></small>
                     </div>
                     <div class="col-auto">
                         <a class="small text-white" href="#!">Privacy</a>
@@ -267,6 +270,27 @@
         <script src="js/modern-interactions.js"></script>
         <!-- Script principal-->
         <script src="js/scripts.js"></script>
+        <!-- Compteur de visiteurs -->
+        <script>
+            (function() {
+                // Vérifier si cette session a déjà été comptée
+                if (!sessionStorage.getItem('session-counted')) {
+                    // C'est une nouvelle session, incrémenter le compteur
+                    let visitCount = localStorage.getItem('visitCount');
+                    if (visitCount === null) {
+                        visitCount = 1;
+                    } else {
+                        visitCount = parseInt(visitCount) + 1;
+                    }
+                    localStorage.setItem('visitCount', visitCount);
+                    // Marquer cette session comme comptée
+                    sessionStorage.setItem('session-counted', 'true');
+                }
+                // Afficher le compteur
+                let visitCount = localStorage.getItem('visitCount') || '0';
+                document.getElementById('visitor-count').textContent = visitCount;
+            })();
+        </script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583" crossorigin="anonymous"></script>
         <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     </body>

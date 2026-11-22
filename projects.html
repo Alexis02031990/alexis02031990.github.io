@@ -239,7 +239,10 @@
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto">
-                        <small>&copy; 2025 Mon Portfolio</small>
+                        <small>&copy; 2026 Mon Portfolio</small>
+                    </div>
+                    <div class="col-auto">
+                        <small class="text-muted">👁️ Visiteurs: <span id="visitor-count">0</span></small>
                     </div>
                     <div class="col-auto">
                         <a class="small text-white" href="#!">Privacy</a>
@@ -258,5 +261,26 @@
         <script src="js/modern-interactions.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- Compteur de visiteurs -->
+        <script>
+            (function() {
+                // Vérifier si cette session a déjà été comptée
+                if (!sessionStorage.getItem('session-counted')) {
+                    // C'est une nouvelle session, incrémenter le compteur
+                    let visitCount = localStorage.getItem('visitCount');
+                    if (visitCount === null) {
+                        visitCount = 1;
+                    } else {
+                        visitCount = parseInt(visitCount) + 1;
+                    }
+                    localStorage.setItem('visitCount', visitCount);
+                    // Marquer cette session comme comptée
+                    sessionStorage.setItem('session-counted', 'true');
+                }
+                // Afficher le compteur
+                let visitCount = localStorage.getItem('visitCount') || '0';
+                document.getElementById('visitor-count').textContent = visitCount;
+            })();
+        </script>
         <amp-auto-ads type="adsense" data-ad-client="ca-pub-2500102972187583"></amp-auto-ads>
     </body>

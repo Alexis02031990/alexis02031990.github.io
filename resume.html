@@ -289,11 +289,14 @@ url('assets/image.jpg');">
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="bg-dark p-4 rounded-4 mb-4">
-                                        <h3 class="text-secondary fw-bolder">INEAD - ESMAC 
-                                            <img src="assets/logo-inead.jfif" alt="..." class="logo-right"/>
-                                        </h3>
-                                        <p class="text-white">2019 - 2020 | E-LEARNING, France</p>
-                                        <p class="text-white">Master Européen en Management de Projets Informatiques</p>
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h3 class="text-secondary fw-bolder">INEAD - ESMAC</h3>
+                                                <p class="text-white mb-2">2019 - 2020 | E-LEARNING, France</p>
+                                                <p class="text-white mb-0">Master Européen en Management de Projets Informatiques</p>
+                                            </div>
+                                            <img src="assets/logo-inead.jfif" alt="INEAD" class="logo-right"/>
+                                        </div>
                                     </div>
                                     <p>Ce programme en ligne m'a permis de développer des compétences approfondies en gestion de projets informatiques, couvrant des aspects comme la planification stratégique, la gestion de ressources, et l'optimisation des processus.</p>
                                 </div>
@@ -303,11 +306,14 @@ url('assets/image.jpg');">
                             <div class="card shadow border-0 rounded-4 mb-5">
                                 <div class="card-body p-5">
                                     <div class="bg-dark p-4 rounded-4 mb-4">
-                                        <h3 class="text-secondary fw-bolder">Polytechnique de Turin
-                                            <img src="assets/logo-polito.jfif" alt="..." class="logo-right"/>
-                                        </h3>
-                                        <p class="text-white">2014 - 2019 | Turin,Italie</p>
-                                        <p class="text-white">Laurea in Ingegneria Informatica (Licence en Informatique)</p>
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h3 class="text-secondary fw-bolder">Polytechnique de Turin</h3>
+                                                <p class="text-white mb-2">2014 - 2019 | Turin,Italie</p>
+                                                <p class="text-white mb-0">Laurea in Ingegneria Informatica (Licence en Informatique)</p>
+                                            </div>
+                                            <img src="assets/logo-polito.jfif" alt="Polytechnique Turin" class="logo-right"/>
+                                        </div>
                                     </div>
                                     <p>Une formation d'ingénierie en informatique qui a renforcé mes compétences en développement logiciel, développement web, et en architecture informatique, tout en me familiarisant avec l'innovation et la recherche technologique.</p>
                                 </div>
@@ -320,11 +326,14 @@ url('assets/image.jpg');">
                                 <div class="card shadow border-0 rounded-4 mb-5">
                                     <div class="card-body p-5">
                                         <div class="bg-dark p-4 rounded-4 mb-4">
-                                            <h3 class="text-secondary fw-bolder">POEI Analyste Développeur AS/400-IBM i
-                                                <img src="assets/logo-notos.png" alt="IBM" class="logo-right"/>
-                                            </h3>
-                                            <p class="text-white">2026 | Terminée le 30 avril, France</p>
-                                            <p class="text-white">Préparation Opérationnelle à l'Emploi Individuelle (POEI)</p>
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <h3 class="text-secondary fw-bolder">POEI Analyste Développeur AS/400-IBM i</h3>
+                                                    <p class="text-white mb-2">2026 | Terminée le 30 avril, France</p>
+                                                    <p class="text-white mb-0">Préparation Opérationnelle à l'Emploi Individuelle (POEI)</p>
+                                                </div>
+                                                <img src="assets/logo-notos.png" alt="NOTOS" class="logo-right"/>
+                                            </div>
                                         </div>
                                         <p>Cette formation intensive me permet d'acquérir des compétences avancées en développement sur plateforme IBM i (AS/400), incluant RPG, CL, SQL, et les outils modernes pour la gestion d'applications d'entreprise.</p>
                                     </div>
@@ -397,7 +406,10 @@ url('assets/image.jpg');">
     <footer class="text-white py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><small>&copy; 2025 Mon Portfolio</small></div>
+                <div class="col-auto"><small>&copy; 2026 Mon Portfolio</small></div>
+                <div class="col-auto">
+                    <small class="text-muted">👁️ Visiteurs: <span id="visitor-count">0</span></small>
+                </div>
                 <div class="col-auto">
                     <a class="small text-white" href="#!">Privacy</a>
                     <span class="mx-1 text-white">·</span>
@@ -458,6 +470,25 @@ url('assets/image.jpg');">
                 }, 1);
             });
         });
+        // Compteur de visiteurs
+        (function() {
+            // Vérifier si cette session a déjà été comptée
+            if (!sessionStorage.getItem('session-counted')) {
+                // C'est une nouvelle session, incrémenter le compteur
+                let visitCount = localStorage.getItem('visitCount');
+                if (visitCount === null) {
+                    visitCount = 1;
+                } else {
+                    visitCount = parseInt(visitCount) + 1;
+                }
+                localStorage.setItem('visitCount', visitCount);
+                // Marquer cette session comme comptée
+                sessionStorage.setItem('session-counted', 'true');
+            }
+            // Afficher le compteur
+            let visitCount = localStorage.getItem('visitCount') || '0';
+            document.getElementById('visitor-count').textContent = visitCount;
+        })();
     </script>
 </body>
 <amp-auto-ads type="adsense"
