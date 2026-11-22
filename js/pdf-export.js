@@ -1,42 +1,18 @@
 /**
- * PDF Export Utility
- * Handles CV export to PDF with proper formatting and visibility
+ * PDF Export Utility - Direct Download Version
+ * Handles CV export to PDF with guaranteed file download
  */
 
 (function() {
     'use strict';
 
     /**
-     * Method 1: Use print-to-PDF with optimized document
+     * Method 1: Use html2pdf library to generate and download PDF directly
+     * This is the MAIN METHOD - should download PDF automatically
      */
-    function printToPdf() {
+    async function generatePdfDirectDownload() {
         try {
-            console.log('🖨️  Ouverture du document optimisé pour PDF...');
-            const pdfWindow = window.open('CV_PRINT_OPTIMAL.html', '_blank');
-            
-            if (!pdfWindow) {
-                throw new Error('Impossible d\'ouvrir la fenêtre d\'impression');
-            }
-            
-            pdfWindow.onload = function() {
-                setTimeout(() => {
-                    console.log('✅ Document chargé, ouverture du dialogue d\'impression');
-                    pdfWindow.print();
-                }, 500);
-            };
-            
-        } catch (error) {
-            console.error('❌ Erreur:', error);
-            alert(error.message);
-        }
-    }
-
-    /**
-     * Method 2: Use html2pdf library with optimized settings
-     */
-    async function generatePdfWithHtml2Pdf() {
-        try {
-            console.log('📄 Génération du PDF avec html2pdf...');
+            console.log('📄 Génération du PDF et téléchargement en cours...');
             
             if (typeof html2pdf === 'undefined') {
                 throw new Error('html2pdf non disponible');
@@ -62,7 +38,7 @@
                 throw new Error('Impossible de extraire le contenu du CV');
             }
             
-            // PDF configuration
+            // PDF configuration optimized for direct download
             const pdfConfig = {
                 margin: 10,
                 filename: 'CV_Alexis_NGUEFACK.pdf',
@@ -92,68 +68,115 @@
                 }
             };
             
-            // Generate PDF
+            console.log('⏳ Rendu du PDF en cours (cela peut prendre quelques secondes)...');
+            
+            // Generate and download PDF
+            // .save() triggers automatic download in browser
             await html2pdf().set(pdfConfig).from(bodyContent).save();
             
-            console.log('✅ PDF généré avec succès!');
+            console.log('✅ PDF téléchargé avec succès!');
             
             // Cleanup
-            document.body.removeChild(tempDiv);
+            setTimeout(() => {
+                document.body.removeChild(tempDiv);
+            }, 500);
+            
+            return true;
             
         } catch (error) {
-            console.error('❌ Erreur lors de la génération du PDF:', error);
-            console.log('💡 Basculement sur la méthode print-to-PDF...');
-            printToPdf();
+            console.error('❌ Erreur lors de la génération du PDF:', error.message);
+            console.log('💡 Essai de la méthode de secours...');
+            return false;
         }
     }
 
     /**
-     * Method 3: Generate PDF from current resume page
+     * Method 2: Fallback - Create a downloadable PDF via print-to-PDF
+     * Opens the CV in a new window for user to print/save as PDF
      */
-    async function generatePdfFromCurrent() {
+    async function downloadViaFallback() {
         try {
-            console.log('📄 Génération du PDF à partir de la page actuelle...');
+            console.log('🖨️  Ouverture du CV pour téléchargement/impression...');
             
-            if (typeof html2pdf === 'undefined') {
-                throw new Error('html2pdf non disponible');
+            const pdfWindow = window.open('CV_PRINT_OPTIMAL.html', '_blank');
+            
+            if (!pdfWindow) {
+                throw new Error('Impossible d\'ouvrir le CV');
             }
             
-            const element = document.getElementById('experience-content');
-            if (!element) {
-                throw new Error('Contenu du CV non trouvé');
-            }
-            
-            // Clone the element to avoid modifying the original
-            const clonedElement = element.cloneNode(true);
-            
-            // Hide unnecessary elements
-            clonedElement.querySelectorAll('.navbar, footer, .btn, .dropdown').forEach(el => {
-                el.style.display = 'none';
-            });
-            
-            const pdfConfig = {
-                margin: 10,
-                filename: 'CV_Alexis_NGUEFACK.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    backgroundColor: '#ffffff'
-                },
-                jsPDF: { 
-                    orientation: 'portrait', 
-                    unit: 'mm', 
-                    format: 'a4'
-                }
+            pdfWindow.onload = function() {
+                setTimeout(() => {
+                    // Show alert with instructions
+                    pdfWindow.alert(
+                        '📋 Le CV s\'est ouvert dans une nouvelle fenêtre\n\n' +
+                        '👉 Pour télécharger le PDF:\n' +
+                        '1. Appuyez sur Ctrl+P (ou ⌘+P sur Mac)\n' +
+                        '2. Sélectionnez "Enregistrer en PDF"\n' +
+                        '3. Cliquez sur "Enregistrer"\n\n' +
+                        '✅ Votre CV sera téléchargé!'
+                    );
+                }, 500);
             };
             
-            await html2pdf().set(pdfConfig).from(clonedElement).save();
+            console.log('✅ CV ouvert pour téléchargement');
+            return true;
             
-            console.log('✅ PDF généré avec succès!');
+        } catch (error) {
+            console.error('❌ Erreur fallback:', error.message);
+            return false;
+        }
+    }
+
+    /**
+     * Main export handler with fallback chain
+     */
+    async function handlePdfExport() {
+        const downloadPdfBtn = document.getElementById('download-pdf');
+        
+        if (!downloadPdfBtn) {
+            console.error('❌ Bouton PDF non trouvé');
+            return;
+        }
+        
+        // Show loading state
+        const originalText = downloadPdfBtn.textContent;
+        const originalHTML = downloadPdfBtn.innerHTML;
+        downloadPdfBtn.disabled = true;
+        downloadPdfBtn.innerHTML = '<i class="bi bi-download me-2"></i>⏳ Téléchargement...';
+        
+        try {
+            console.log('🔵 Export PDF lancé');
+            
+            // Method 1: Try direct PDF download with html2pdf
+            if (typeof html2pdf !== 'undefined') {
+                console.log('✅ html2pdf disponible, tentative de téléchargement direct...');
+                const success = await generatePdfDirectDownload();
+                
+                if (success) {
+                    downloadPdfBtn.innerHTML = '<i class="bi bi-download me-2"></i>✅ Téléchargé!';
+                    setTimeout(() => {
+                        downloadPdfBtn.innerHTML = originalHTML;
+                        downloadPdfBtn.disabled = false;
+                    }, 2000);
+                    return;
+                }
+            }
+            
+            // Fallback: Use print method
+            console.log('💾 Basculement sur la méthode de fallback...');
+            await downloadViaFallback();
+            
+            downloadPdfBtn.innerHTML = '<i class="bi bi-download me-2"></i>📋 Vérifiez votre navigateur';
+            setTimeout(() => {
+                downloadPdfBtn.innerHTML = originalHTML;
+                downloadPdfBtn.disabled = false;
+            }, 3000);
             
         } catch (error) {
             console.error('❌ Erreur:', error);
-            alert(`Erreur: ${error.message}`);
+            alert('⚠️ Erreur lors du téléchargement du PDF.\n\nUtilisez plutôt la version Word qui est garantie de fonctionner!');
+            downloadPdfBtn.innerHTML = originalHTML;
+            downloadPdfBtn.disabled = false;
         }
     }
 
@@ -166,28 +189,10 @@
         if (downloadPdfBtn) {
             downloadPdfBtn.addEventListener('click', function(e) {
                 e.preventDefault();
-                console.log('🔵 Clic sur PDF détecté');
-                
-                // Show loading feedback
-                const originalText = downloadPdfBtn.textContent;
-                downloadPdfBtn.textContent = '⏳ Génération...';
-                downloadPdfBtn.disabled = true;
-                
-                // Try html2pdf first, fallback to print
-                if (typeof html2pdf !== 'undefined') {
-                    generatePdfWithHtml2Pdf().finally(() => {
-                        downloadPdfBtn.textContent = originalText;
-                        downloadPdfBtn.disabled = false;
-                    });
-                } else {
-                    console.warn('html2pdf non disponible, utilisation de l\'impression...');
-                    printToPdf();
-                    downloadPdfBtn.textContent = originalText;
-                    downloadPdfBtn.disabled = false;
-                }
+                handlePdfExport();
             });
             
-            console.log('✅ Handler PDF initialisé');
+            console.log('✅ Handler PDF initialisé et prêt');
         } else {
             console.error('❌ Bouton PDF non trouvé');
         }
@@ -202,9 +207,8 @@
 
     // Expose functions for external access
     window.pdfExport = {
-        generatePdf: generatePdfWithHtml2Pdf,
-        printToPdf: printToPdf,
-        generateFromCurrent: generatePdfFromCurrent
+        downloadPdf: generatePdfDirectDownload,
+        downloadFallback: downloadViaFallback
     };
 
 })();
