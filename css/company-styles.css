@@ -92,6 +92,7 @@
   opacity: 1;
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  flex-shrink: 0;
 }
 
 .section-experience .card:hover .logo-right {
