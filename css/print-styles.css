@@ -1,0 +1,281 @@
+/* ============================================
+   STYLES D'IMPRESSION POUR PDF
+   ============================================ */
+
+@media print {
+    /* Masquer les éléments non-essentiels à l'impression */
+    .navbar,
+    footer,
+    .btn,
+    .visitor-counter,
+    .no-print,
+    .d-print-none {
+        display: none !important;
+    }
+
+    /* Restructurer la mise en page pour l'impression */
+    body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container,
+    .container-fluid {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    /* Logos à droite avec taille correcte pour PDF */
+    .logo-right {
+        max-width: 70px !important;
+        height: auto !important;
+        min-width: 60px !important;
+        margin-left: 15px !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+    }
+
+    /* Les images doivent être visibles en PDF */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Boîte flexbox pour l'expérience et l'éducation - important pour les logos */
+    .d-flex.justify-content-between.align-items-start {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+
+    /* Section contenant le texte - elle doit s'étendre */
+    .d-flex.justify-content-between.align-items-start > div:first-child {
+        flex: 1 !important;
+        min-width: 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    /* Les titres des entreprises et écoles - texte complet visible */
+    h3.text-primary.fw-bolder,
+    h3.text-secondary.fw-bolder {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+        font-size: 16px !important;
+    }
+
+    /* Amélioration pour les cartes d'expérience et éducation */
+    .card {
+        page-break-inside: avoid !important;
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        margin-bottom: 15px !important;
+    }
+
+    .card-body {
+        padding: 15px !important;
+    }
+
+    /* Sections avec fond sombre - doivent rester visibles */
+    .bg-dark {
+        background-color: #e8e8e8 !important;
+        color: #000 !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+    }
+
+    .bg-dark p,
+    .bg-dark h3 {
+        color: #000 !important;
+    }
+
+    /* Texte blanc en noir pour l'impression */
+    .text-white {
+        color: #000 !important;
+    }
+
+    /* Texte principal lisible */
+    p {
+        page-break-inside: avoid !important;
+        margin: 5px 0 !important;
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Sections avec breaks */
+    section {
+        page-break-inside: avoid !important;
+    }
+
+    /* Badges lisibles en noir */
+    .badge {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #999 !important;
+        padding: 5px 10px !important;
+        margin: 2px !important;
+        font-size: 10px !important;
+        display: inline-block !important;
+    }
+
+    /* Réduction de l'espacement pour économiser l'espace papier */
+    .mb-5 {
+        margin-bottom: 15px !important;
+    }
+
+    .mb-4 {
+        margin-bottom: 10px !important;
+    }
+
+    .mb-3 {
+        margin-bottom: 8px !important;
+    }
+
+    .mb-2 {
+        margin-bottom: 5px !important;
+    }
+
+    .mb-0 {
+        margin-bottom: 0 !important;
+    }
+
+    .py-5 {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .p-5 {
+        padding: 10px !important;
+    }
+
+    .p-4 {
+        padding: 8px !important;
+    }
+
+    /* Éviter les coupes de page dans les listes */
+    li {
+        page-break-inside: avoid !important;
+    }
+
+    /* Liens sans couleur en impression */
+    a {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    /* Réduction générale de la taille du texte pour l'impression */
+    body {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
+
+    h1 {
+        font-size: 20px !important;
+    }
+
+    h2 {
+        font-size: 16px !important;
+    }
+
+    h3 {
+        font-size: 14px !important;
+    }
+
+    h4, h5, h6 {
+        font-size: 12px !important;
+    }
+
+    /* Éviter les coupes de page au niveau des en-têtes */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Section header en impression */
+    header {
+        page-break-inside: avoid !important;
+    }
+
+    /* Texte dégradé - visible en PDF */
+    .text-gradient {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+
+    /* Couleurs primaires et secondaires en noir pour l'impression */
+    .text-primary,
+    .text-secondary,
+    .text-success {
+        color: #000 !important;
+    }
+
+    /* Très important : forcer l'affichage des logos */
+    .logo-right,
+    img[alt="Toyota"],
+    img[alt="NOTOS"],
+    img[alt="Orange France"],
+    img[alt="Polytechnique Turin"],
+    img[alt="INEAD"],
+    img[alt="Open"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 70px !important;
+        height: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* Flexbox alignment particulièrement important pour les logos */
+    .align-items-start {
+        align-items: flex-start !important;
+    }
+
+    .justify-content-between {
+        justify-content: space-between !important;
+    }
+
+    /* Largeur correcte pour le texte à gauche */
+    div.d-flex.justify-content-between > div {
+        width: auto !important;
+        flex-shrink: 1 !important;
+    }
+
+    div.d-flex.justify-content-between > img {
+        flex-shrink: 0 !important;
+        width: auto !important;
+    }
+}
+
+/* ============================================
+   STYLES SPECIFIQUES POUR EXPORT PDF
+   ============================================ */
+
+@page {
+    size: A4;
+    margin: 1cm;
+}
+
+.print-only {
+    display: none;
+}
+
+@media print {
+    .print-only {
+        display: block !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    /* Très important : permettre les images en PDF */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
