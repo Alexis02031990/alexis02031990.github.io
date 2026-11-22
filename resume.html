@@ -17,6 +17,8 @@
     <link href="css/print-styles.css" rel="stylesheet" media="print" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583"
     crossorigin="anonymous"></script>
        <script async custom-element="amp-auto-ads"
@@ -455,36 +457,64 @@ url('assets/image.jpg');">
                 downloadPdfBtn.addEventListener('click', function (e) {
                     e.preventDefault();
                     console.log("Téléchargement PDF cliqué");
-        
+                    
+                    // Afficher un message de chargement
+                    const originalText = this.textContent;
+                    this.textContent = "Génération en cours...";
+                    this.disabled = true;
+                    
                     const element = document.getElementById('experience-content');
-        
+                    
+                    // Utiliser html2canvas directement pour meilleur contrôle
                     const options = {
-                        margin: [0.5, 0.5, 0.5, 0.5],
-                        filename: 'CV_Alexis_NGUEFACK.pdf',
-                        html2canvas: { 
-                            scale: 2,
-                            useCORS: true,
-                            logging: true,
-                            backgroundColor: '#ffffff'
-                        },
-                        jsPDF: { 
-                            unit: 'in', 
-                            format: 'a4', 
-                            orientation: 'portrait',
-                            compress: true
-                        }
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#ffffff',
+                        logging: false,
+                        windowHeight: document.body.scrollHeight,
+                        windowWidth: 1200
                     };
-        
+                    
                     setTimeout(() => {
-                        html2pdf().set(options).from(element).save()
-                            .then(() => {
-                                console.log("PDF généré avec succès - incluant logos et noms complets");
-                            })
-                            .catch((error) => {
-                                console.error("Erreur lors de la génération du PDF :", error);
-                                alert("Erreur : " + error.message);
+                        html2canvas(element, options).then(canvas => {
+                            // Créer PDF avec jsPDF
+                            const imgData = canvas.toDataURL('image/png');
+                            const pdf = new jsPDF.jsPDF({
+                                orientation: 'portrait',
+                                unit: 'mm',
+                                format: 'a4'
                             });
-                    }, 1);
+                            
+                            const imgWidth = 190; // A4 width - margins
+                            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                            const pageHeight = 277; // A4 height
+                            let heightLeft = imgHeight;
+                            let position = 0;
+                            
+                            // Ajouter images sur plusieurs pages si nécessaire
+                            while (heightLeft >= 0) {
+                                pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                                heightLeft -= pageHeight;
+                                position -= pageHeight;
+                                if (heightLeft > 0) {
+                                    pdf.addPage();
+                                }
+                            }
+                            
+                            pdf.save('CV_Alexis_NGUEFACK.pdf');
+                            console.log("✅ PDF généré avec succès!");
+                            
+                            // Restaurer le bouton
+                            downloadPdfBtn.textContent = originalText;
+                            downloadPdfBtn.disabled = false;
+                        }).catch((error) => {
+                            console.error("❌ Erreur PDF :", error);
+                            alert("⚠️ La génération PDF a échoué.\n\nConseil : Utilisez plutôt la version Word qui est parfaitement formatée!");
+                            downloadPdfBtn.textContent = originalText;
+                            downloadPdfBtn.disabled = false;
+                        });
+                    }, 500);
                 });
             }
         });
