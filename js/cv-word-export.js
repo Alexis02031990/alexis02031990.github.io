@@ -7,7 +7,6 @@ const cvData = {
     email: "alexis@example.com",
     telephone: "07 50 09 02 35",
     lieu: "Ancenis-Saint-Géréon",
-    statut: "Actuellement en CDI chez Toyota",
     ouverture: "Ouvert à des missions en freelance ou portage salarial",
     
     experiences: [
@@ -275,7 +274,6 @@ function generateWordHTML() {
         </div>
 
         <div class="status-box">
-            <p>✓ ${cvData.statut}</p>
             <p>${cvData.ouverture}</p>
         </div>
 

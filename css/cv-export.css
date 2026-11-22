@@ -72,6 +72,7 @@
     font-size: 19px !important;
     margin: 16px 0 8px !important;
     border-bottom: 1px solid #b8c8d8;
+    padding-top: 4px;
 }
 
 .pdf-cv .card {
@@ -121,6 +122,7 @@
     font-size: 16px !important;
     margin: 0 0 4px !important;
     overflow-wrap: anywhere;
+    padding-top: 4px;
 }
 
 .pdf-cv .logo-right {
@@ -147,6 +149,7 @@
 
 .pdf-cv p {
     margin: 0 0 7px !important;
+    padding-top: 4px;
 }
 
 .pdf-cv ul {
@@ -156,7 +159,7 @@
 
 .pdf-cv li {
     list-style: disc !important;
-    padding: 0 !important;
+    padding: 4px 0 0 !important;
     margin: 0 0 3px !important;
 }
 
