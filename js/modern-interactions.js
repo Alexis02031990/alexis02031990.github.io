@@ -8,6 +8,14 @@
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
+
+  if (!navbar) return;
+
+  const updateNavbarHeight = () => {
+    document.body.style.setProperty('--navbar-height', `${navbar.offsetHeight}px`);
+  };
+  updateNavbarHeight();
+  new ResizeObserver(updateNavbarHeight).observe(navbar);
   
   window.addEventListener('scroll', function() {
     if (window.scrollY > 50) {

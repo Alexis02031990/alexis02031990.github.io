@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,11 +14,10 @@
     <link href="css/modern-design.css" rel="stylesheet" />
     <link href="css/navbar-phone.css" rel="stylesheet" />
     <link href="css/company-styles.css" rel="stylesheet" />
+    <link href="css/cv-export.css" rel="stylesheet" />
     <link href="css/print-styles.css" rel="stylesheet" media="print" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583"
     crossorigin="anonymous"></script>
        <script async custom-element="amp-auto-ads"
@@ -55,30 +54,27 @@ url('assets/image.jpg');">
         </nav>
 
         <div class="container px-5 my-5">
-            <div class="d-flex justify-content-center mb-5 position-relative">
+            <div class="cv-page-heading d-flex justify-content-center mb-5">
                 <h1 class="display-5 fw-bolder mb-0 mx-auto">
                     <span class="text-gradient d-inline">Mon CV</span>
                 </h1>
-                <div class="position-absolute" style="right: 0;">
-                    <div class="dropdown">
-                        <button class="btn btn-primary px-4 py-3 dropdown-toggle" type="button" id="downloadMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-download me-2"></i> Télécharger CV
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="downloadMenu">
-                            <li><a class="dropdown-item" id="download-pdf" href="#">
-                                <i class="bi bi-file-pdf me-2"></i> En PDF
-                            </a></li>
-                            <li><a class="dropdown-item" id="download-word" href="CV_Alexis_NGUEFACK.html" download="CV_Alexis_NGUEFACK.html">
-                                <i class="bi bi-file-word me-2"></i> En Word/HTML
-                            </a></li>
-                        </ul>
-                    </div>
+                <div class="cv-download-control">
+                    <button class="btn btn-primary px-4 py-3" id="download-pdf" type="button">
+                        <i class="bi bi-file-pdf me-2"></i> Télécharger CV en PDF
+                    </button>
+                    <a class="btn btn-outline-primary px-4 py-3" id="download-word" href="CV_Alexis_NGUEFACK.html" download="CV_Alexis_NGUEFACK.html">
+                        <i class="bi bi-file-word me-2"></i> En Word/HTML
+                    </a>
                 </div>
             </div>
-            <div class="text-center mb-4">
+            <div id="cv-status" class="text-center mb-4">
                 <p class="fs-5 fw-bold text-success">
                     <i class="bi bi-check-circle me-2"></i>Actuellement en CDI chez Toyota
                 </p>
+            </div>
+            <div id="cv-identity" class="visually-hidden">
+                <h1>Alexis NGUEFACK</h1>
+                <p>ANALYSTE CONCEPTEUR DEVELOPPEUR IBM i / AS400-C#.NET</p>
             </div>
                                    
             

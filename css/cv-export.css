@@ -1,0 +1,173 @@
+.cv-page-heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cv-download-control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+/* La copie utilisée pour le PDF garde toutes les informations de la page. */
+.pdf-cv {
+    background: #fff;
+    color: #202b3a;
+    font: 14px/1.45 Arial, sans-serif;
+    padding-top: 6px;
+}
+
+.pdf-cv *,
+.pdf-cv *::before,
+.pdf-cv *::after {
+    animation: none !important;
+    transition: none !important;
+    text-shadow: none !important;
+}
+
+.pdf-cv section,
+.pdf-cv .card {
+    opacity: 1 !important;
+}
+
+.pdf-cv > div:first-child {
+    text-align: center;
+    border-bottom: 2px solid #163b64;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+}
+
+.pdf-cv h1 {
+    color: #163b64 !important;
+    font-size: 25px !important;
+    margin: 0 0 4px !important;
+}
+
+.pdf-cv > div:first-child p {
+    color: #202b3a !important;
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+.pdf-cv #experience-content,
+.pdf-cv .row,
+.pdf-cv .col-lg-11 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+.pdf-cv section {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.pdf-cv h2 {
+    color: #163b64 !important;
+    font-size: 19px !important;
+    margin: 16px 0 8px !important;
+    border-bottom: 1px solid #b8c8d8;
+}
+
+.pdf-cv .card {
+    display: block !important;
+    overflow: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    margin: 0 0 14px !important;
+}
+
+.pdf-cv .card-body {
+    padding: 0 !important;
+}
+
+.pdf-cv .card .bg-dark {
+    background: #edf2f7 !important;
+    padding: 10px !important;
+    margin: 0 0 8px !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+}
+
+.pdf-cv .card .bg-dark::before,
+.pdf-cv .card::before,
+.pdf-cv li::before {
+    display: none !important;
+}
+
+.pdf-cv .bg-dark > div {
+    display: flex !important;
+    width: 100%;
+    gap: 12px;
+}
+
+.pdf-cv .bg-dark > div > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.pdf-cv .card h3 {
+    display: block !important;
+    width: auto !important;
+    color: #163b64 !important;
+    background: none !important;
+    -webkit-text-fill-color: #163b64 !important;
+    font-size: 16px !important;
+    margin: 0 0 4px !important;
+    overflow-wrap: anywhere;
+}
+
+.pdf-cv .logo-right {
+    float: none !important;
+    width: 100px !important;
+    max-width: 100px !important;
+    height: 50px !important;
+    object-fit: contain;
+    filter: none !important;
+    transform: none !important;
+    flex-shrink: 0;
+}
+
+.pdf-cv p,
+.pdf-cv li,
+.pdf-cv strong,
+.pdf-cv .text-white,
+.pdf-cv .text-gradient,
+.pdf-cv .text-success {
+    color: #202b3a !important;
+    -webkit-text-fill-color: #202b3a !important;
+    background: none !important;
+}
+
+.pdf-cv p {
+    margin: 0 0 7px !important;
+}
+
+.pdf-cv ul {
+    margin: 3px 0 8px !important;
+    padding-left: 20px !important;
+}
+
+.pdf-cv li {
+    list-style: disc !important;
+    padding: 0 !important;
+    margin: 0 0 3px !important;
+}
+
+.pdf-cv .badge {
+    background: #edf2f7 !important;
+    color: #202b3a !important;
+    -webkit-text-fill-color: #202b3a !important;
+    border: 1px solid #ccd7e2;
+    padding: 4px 7px !important;
+    margin: 2px !important;
+    white-space: normal;
+    text-transform: none;
+    font-size: 12px !important;
+}
