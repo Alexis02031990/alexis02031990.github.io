@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV - Alexis NGUEFACK (Haute Résolution)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            color-adjust: exact;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm 15mm 15mm 15mm;
+            orphans: 3;
+            widows: 3;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: white !important;
+            color: #000000 !important;
+        }
+
+        body {
+            font-size: 11pt;
+            line-height: 1.5;
+            padding: 15mm;
+            background-color: white !important;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #000000;
+            page-break-after: avoid;
+        }
+
+        .header h1 {
+            font-size: 28pt;
+            color: #000000;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            color: #000000;
+            margin-top: 10px;
+        }
+
+        .contact-info span {
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        .status-box {
+            background: #f5f5f5 !important;
+            border-left: 4px solid #000000;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 11pt;
+            page-break-after: avoid;
+        }
+
+        .status-box p {
+            color: #000000 !important;
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 11pt;
+        }
+
+        section {
+            margin: 20px 0 15px 0;
+            page-break-inside: avoid;
+        }
+
+        section h2 {
+            font-size: 14pt;
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            page-break-after: avoid;
+        }
+
+        .entry {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+            border: 1px solid #cccccc;
+            padding: 12px;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+
+        .entry-company {
+            font-weight: bold;
+            font-size: 11pt;
+            color: #000000;
+            margin-bottom: 3px;
+        }
+
+        .entry-logo {
+            width: 60px;
+            height: auto;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        .entry-meta {
+            font-size: 10pt;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            color: #000000;
+            font-size: 11pt;
+            margin: 5px 0;
+        }
+
+        .entry-content {
+            font-size: 10pt;
+            color: #000000;
+            line-height: 1.4;
+            margin: 8px 0;
+        }
+
+        .entry-content p {
+            margin: 4px 0;
+            page-break-after: avoid;
+            color: #000000;
+        }
+
+        .entry-content strong {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .tech-badges {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            page-break-after: avoid;
+        }
+
+        .tech-badge {
+            background: #e8e8e8;
+            color: #000000;
+            padding: 3px 7px;
+            font-size: 9pt;
+            border: 1px solid #999999;
+            border-radius: 3px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .skills-container {
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        .skill-category {
+            page-break-inside: avoid;
+            margin-bottom: 15px;
+            break-inside: avoid;
+        }
+
+        .skill-category h4 {
+            color: #000000;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            font-weight: bold;
+            page-break-after: avoid;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            text-align: center;
+            color: #666666;
+            font-size: 9pt;
+            border-top: 1px solid #999999;
+            padding-top: 10px;
+            page-break-before: avoid;
+        }
+
+        /* Ensure text is always visible in print */
+        p, span, div, li, td, th {
+            color: #000000 !important;
+        }
+
+        /* High contrast for headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: #000000 !important;
+            page-break-after: avoid;
+        }
+
+        /* Suppress any background that might hide text */
+        .bg-dark {
+            background-color: #f5f5f5 !important;
+            color: #000000 !important;
+        }
+
+        /* Links should be visible */
+        a {
+            color: #0066cc !important;
+            text-decoration: underline;
+        }
+
+        /* Ensure images display properly */
+        img {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Print media queries */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            body {
+                margin: 0 !important;
+                padding: 15mm !important;
+                background: white !important;
+            }
+
+            html {
+                background: white !important;
+            }
+
+            .no-print,
+            .navbar,
+            footer,
+            .btn,
+            .dropdown,
+            .visitor-counter,
+            button {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ALEXIS NGUEFACK</h1>
+        <div class="subtitle">Ingénieur Informatique Fullstack</div>
+        <div class="contact-info">
+            <span>Tél : 07 50 09 02 35</span>
+            <span>Localisation : Ancenis-Saint-Géréon, France</span>
+        </div>
+    </div>
+
+    <div class="status-box">
+        <p>✓ Actuellement en CDI chez Toyota Material Handling Manufacturing</p>
+        <p>✓ Ouvert à des missions en freelance ou portage salarial</p>
+    </div>
+
+    <!-- Section Expérience Professionnelle -->
+    <section>
+        <h2>EXPÉRIENCE PROFESSIONNELLE</h2>
+
+        <div class="entry">
+            <div class="entry-company">Toyota Material Handling Manufacturing</div>
+            <div class="entry-meta">Juin 2026 - Présent | CDI | Ingénieur support et développement As/400</div>
+            <div class="entry-meta">Localisation : Ancenis-Saint-Géréon</div>
+            <div class="entry-content">
+                <p><strong>Contexte :</strong> Développement, maintenance et support applicatif sur environnement IBM i. Participation active aux phases de tests, recettes et mises en production.</p>
+                <p><strong>Objectif :</strong> Assurer le développement, la maintenance et le support des applications sur IBM i tout en optimisant les processus et la qualité.</p>
+                <p><strong>Technologies :</strong></p>
+                <div class="tech-badges">
+                    <span class="tech-badge">RPG III</span>
+                    <span class="tech-badge">RPG IV</span>
+                    <span class="tech-badge">RPG Free</span>
+                    <span class="tech-badge">CL/CLLE</span>
+                    <span class="tech-badge">DB2 for i</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">Écrans 5250</span>
+                    <span class="tech-badge">Subfiles</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-company">NOTOS</div>
+            <div class="entry-meta">Février 2026 - Avril 2026 | Stage | Analyste Développeur AS/400 IBM i</div>
+            <div class="entry-meta">Localisation : Strasbourg</div>
+            <div class="entry-content">
+                <p><strong>Contexte :</strong> Formation intensive et pratique en développement sur plateforme IBM i (AS/400), incluant l'apprentissage des technologies RPG, CL, SQL, et les bonnes pratiques de développement d'applications d'entreprise.</p>
+                <p><strong>Objectif :</strong> Acquérir une expertise en développement AS/400/IBM i et maîtriser les technologies d'entreprise.</p>
+                <p><strong>Technologies :</strong></p>
+                <div class="tech-badges">
+                    <span class="tech-badge">RPG</span>
+                    <span class="tech-badge">CL</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">DB2 for i</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-company">Open (Groupe LNA)</div>
+            <div class="entry-meta">2023 - 2025 | CDI | Concepteur Développeur Back-end C#.NET</div>
+            <div class="entry-meta">Localisation : Strasbourg</div>
+            <div class="entry-content">
+                <p><strong>Contexte :</strong> Conception et développement de solutions back-end robustes utilisant C# et .NET pour des applications d'entreprise complexes.</p>
+                <p><strong>Technologies :</strong></p>
+                <div class="tech-badges">
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">.NET Framework</span>
+                    <span class="tech-badge">SQL Server</span>
+                    <span class="tech-badge">API REST</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-company">Orange France</div>
+            <div class="entry-meta">2021 - 2023 | Stage + CDI | Développeur back-end/front-end</div>
+            <div class="entry-meta">Localisation : Arcueil</div>
+            <div class="entry-content">
+                <p><strong>Contexte :</strong> Réemploi : Application web conçue et développée par la direction Innovation &amp; RSE de Orange Arcueil.</p>
+                <p><strong>Technologies :</strong></p>
+                <div class="tech-badges">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-company">Armonie Consult</div>
+            <div class="entry-meta">2020 - 2021 | CDI | Développeur Full-Stack</div>
+            <div class="entry-meta">Localisation : Paris</div>
+            <div class="entry-content">
+                <p><strong>Domaines :</strong> Développement full-stack pour applications web d'entreprise.</p>
+                <div class="tech-badges">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Éducation -->
+    <section>
+        <h2>ÉDUCATION</h2>
+
+        <div class="entry">
+            <div class="entry-company">INEAD</div>
+            <div class="entry-meta">2019 - 2020 | E-Learning</div>
+            <div class="entry-title">Master Européen en Management de Projets Informatiques</div>
+            <div class="entry-meta">France</div>
+            <div class="entry-content">
+                <p>Programme en ligne développant compétences en gestion de projets informatiques, planification stratégique, gestion de ressources, et optimisation des processus.</p>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-company">Polytechnique de Turin</div>
+            <div class="entry-meta">2014 - 2019</div>
+            <div class="entry-title">Laurea in Ingegneria Informatica (Licence en Informatique)</div>
+            <div class="entry-meta">Turin, Italie</div>
+            <div class="entry-content">
+                <p>Formation d'ingénierie en informatique renforçant compétences en développement logiciel, développement web, et architecture informatique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formations Complémentaires -->
+    <section>
+        <h2>FORMATIONS COMPLÉMENTAIRES</h2>
+
+        <div class="entry">
+            <div class="entry-company">NOTOS</div>
+            <div class="entry-meta">2026 | Terminée le 30 avril</div>
+            <div class="entry-title">POEI Analyste Développeur AS/400-IBM i</div>
+            <div class="entry-meta">France</div>
+            <div class="entry-content">
+                <p>Formation intensive en développement AS/400 avec RPG, CL, SQL et outils modernes pour la gestion d'applications d'entreprise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences Techniques -->
+    <section>
+        <h2>COMPÉTENCES TECHNIQUES</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h4>Langages de Programmation</h4>
+                <div class="skill-list">
+                    <span class="tech-badge">RPG III</span>
+                    <span class="tech-badge">RPG IV</span>
+                    <span class="tech-badge">RPG Free</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">SQL</span>
+                    <span class="tech-badge">CL/CLLE</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4>Frameworks &amp; Libraires</h4>
+                <div class="skill-list">
+                    <span class="tech-badge">.NET Framework</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express.js</span>
+                    <span class="tech-badge">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4>Bases de Données</h4>
+                <div class="skill-list">
+                    <span class="tech-badge">SQL Server</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">DB2 for i</span>
+                    <span class="tech-badge">MySQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4>Outils &amp; Plateformes</h4>
+                <div class="skill-list">
+                    <span class="tech-badge">Git</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">Jenkins</span>
+                    <span class="tech-badge">IBM i</span>
+                    <span class="tech-badge">Linux</span>
+                    <span class="tech-badge">Windows</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Langues -->
+    <section>
+        <h2>LANGUES</h2>
+        <div class="entry">
+            <p><strong>Français :</strong> Courant (langue maternelle)</p>
+            <p><strong>Anglais :</strong> Intermédiaire (compréhension écrite et orale)</p>
+            <p><strong>Italien :</strong> Élémentaire</p>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>CV généré le {{ date }} | Alexis NGUEFACK</p>
+    </div>
+
+</body>
+</html>

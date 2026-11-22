@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-alexis",
+  "version": "1.0.0",
+  "description": "Professional portfolio website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.13.0",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.1"
+  }
+}

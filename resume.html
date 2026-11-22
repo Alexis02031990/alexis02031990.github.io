@@ -441,7 +441,9 @@ url('assets/image.jpg');">
     <!-- Script pour les interactions modernes -->
     <script src="js/modern-interactions.js"></script>
     <!-- Core theme JS -->
-    <script src="js/scripts.js"></script>   
+    <script src="js/scripts.js"></script>
+    <!-- PDF Export Utility -->
+    <script src="js/pdf-export.js"></script>
     <style>
         /* Classe pour masquer les images lors de l'impression en PDF */
         .no-print img {
@@ -452,39 +454,6 @@ url('assets/image.jpg');">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             console.log("✅ DOMContentLoaded déclenché");
-            
-            // Handler pour le téléchargement PDF
-            const downloadPdfBtn = document.getElementById('download-pdf');
-            console.log("Bouton PDF trouvé:", downloadPdfBtn);
-            
-            if (downloadPdfBtn) {
-                downloadPdfBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    console.log("🔵 Clic sur PDF détecté");
-                    
-                    // Ouvrir la version imprimable en nouvelle fenêtre
-                    const pdfWindow = window.open('CV_PDF_Imprimable.html', '_blank');
-                    
-                    if (pdfWindow) {
-                        console.log("✅ Version imprimable ouverte!");
-                        
-                        // Après 2 secondes, proposer d'imprimer
-                        setTimeout(() => {
-                            pdfWindow.focus();
-                            // Afficher un message
-                            pdfWindow.onload = function() {
-                                alert('📋 La version optimisée pour PDF s\'est ouverte!\n\n👉 Maintenant faites:\n1. Ctrl + P (ou Imprimer)\n2. Cherchez "Enregistrer en PDF"\n3. Cliquez "Enregistrer"\n\nC\'est tout! ✅');
-                            };
-                        }, 1500);
-                    } else {
-                        console.error("❌ Impossible d'ouvrir la fenêtre!");
-                        alert("⚠️ Impossible d'ouvrir le PDF.\n\nUtilisez plutôt la version Word qui est garantie de fonctionner!");
-                    }
-                });
-            } else {
-                console.error("❌ Bouton 'download-pdf' non trouvé!");
-            }
-        });
 
         // Compteur de visiteurs
         (function() {
@@ -503,8 +472,11 @@ url('assets/image.jpg');">
             }
             // Afficher le compteur
             let visitCount = localStorage.getItem('visitCount') || '0';
-            document.getElementById('visitor-count').textContent = visitCount;
+            if (document.getElementById('visitor-count')) {
+                document.getElementById('visitor-count').textContent = visitCount;
+            }
         })();
+        });
     </script>
 </body>
 <amp-auto-ads type="adsense"
