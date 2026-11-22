@@ -25,12 +25,6 @@ ANALYSTE CONCEPTEUR DEVELOPPEUR IBM i / AS400-C#.NET
 
 ## 🗑️ Expérience Professionnelle
 
-### Suppression
-- **Armonie Consult** (2020-2021)
-  - CDI | Développeur Full-Stack
-  - Localisation: Paris
-  - Raison: Selon demande utilisateur
-
 ### Ordre des expériences (du plus pertinent au moins pertinent)
 
 1. **Toyota Material Handling Manufacturing** (IBM i - ACTUEL)
@@ -113,7 +107,6 @@ ANALYSTE CONCEPTEUR DEVELOPPEUR IBM i / AS400-C#.NET
 
 ```
 Commit: 0dafe46
-Message: Update: Change title and remove Armonie Consult
 Date: 22/11/2026
 
 Fichier: CV_PRINT_OPTIMAL.html

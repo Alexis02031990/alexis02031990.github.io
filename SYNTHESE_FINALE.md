@@ -12,7 +12,7 @@ Votre portfolio a été **complètement amélioré** et rendu beaucoup plus **pr
 - ✅ Affiche clairement : "Actuellement en CDI chez Toyota"
 - ✅ Couleur verte professionnelle avec icône ✓
 - ✅ Positionné juste sous le titre "Mon CV"
-- ✅ Corrige le texte (Toyota au lieu d'Armonie)
+- ✅ Actualise le statut professionnel pour Toyota
 
 ### 2️⃣ Noms d'Entreprises Colorés 🎨
 Chaque entreprise a maintenant sa propre couleur :

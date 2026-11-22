@@ -8,7 +8,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. ✅ Écrire "Actuellement en CDI chez Toyota" sous le titre
-2. ✅ Corriger : travail chez Toyota et non Armonie  
+2. ✅ Actualiser le statut professionnel chez Toyota
 3. ✅ Fixer la navbar qui s'affiche mal
 4. ✅ Ajouter le numéro de téléphone
 5. ✅ Améliorer le formulaire de contact

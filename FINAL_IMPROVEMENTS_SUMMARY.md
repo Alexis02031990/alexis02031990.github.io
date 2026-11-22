@@ -10,7 +10,7 @@ Votre portfolio a été complètement redesigné et rendu beaucoup plus professi
 - Ajout d'un badge vert sous le titre "Mon CV"
 - Texte : "Actuellement en CDI chez Toyota"
 - Affichage avec icône ✓ professionnelle
-- Correction : "Toyota" au lieu de "Armonie"
+- Statut professionnel actualisé pour Toyota
 
 #### 2. **Couleurs Distinctes par Entreprise** 🎨
 Chaque entreprise a maintenant sa propre couleur professionnelle :

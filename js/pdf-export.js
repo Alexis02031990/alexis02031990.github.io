@@ -10,10 +10,7 @@
         return;
     }
 
-    button.addEventListener('click', async function () {
-        if (button.disabled) return;
-
-        const originalLabel = button.innerHTML;
+    function createContent() {
         const cv = document.createElement('div');
         cv.className = 'pdf-cv';
         const header = identity.cloneNode(true);
@@ -22,6 +19,16 @@
         const cvContent = content.cloneNode(true);
         cvContent.removeAttribute('id');
         cv.append(header, cvContent);
+        return cv;
+    }
+
+    window.cvExport = { createContent };
+
+    button.addEventListener('click', async function () {
+        if (button.disabled) return;
+
+        const originalLabel = button.innerHTML;
+        const cv = createContent();
 
         button.disabled = true;
         button.textContent = 'Génération du PDF…';

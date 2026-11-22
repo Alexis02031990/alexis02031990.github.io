@@ -98,7 +98,7 @@ Node.js, Angular 11, PostgreSQL, Visual Studio 2022
 ## 🔄 Anciennes Expériences Conservées
 
 Les expériences précédentes ont été conservées dans le fichier mais réorganisées :
-- L'expérience **Armonie** a été remplacée par **Toyota**
+- L'expérience Toyota a été mise à jour
 - Les numérotations ont été ajustées en conséquence
 
 ---

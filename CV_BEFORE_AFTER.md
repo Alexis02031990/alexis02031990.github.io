@@ -24,13 +24,12 @@ ANALYSTE CONCEPTEUR DEVELOPPEUR IBM i / AS400-C#.NET
 
 ## 🗑️ Expérience Professionnelle
 
-### AVANT (5 expériences)
+### AVANT
 
 1. Toyota Material Handling Manufacturing (IBM i)
 2. NOTOS (IBM i)
 3. Open (Groupe LNA) (C#.NET)
 4. Orange France (Web)
-5. **Armonie Consult (Full-Stack)** ← SUPPRIMÉ
 
 ### APRÈS (4 expériences)
 
@@ -124,31 +123,11 @@ JavaScript | React | Node.js | MongoDB
 
 ---
 
-## 🗑️ EXPÉRIENCE SUPPRIMÉE: ARMONIE CONSULT
-
-**Titre:** Développeur Full-Stack  
-**Période:** 2020 - 2021  
-**Type:** CDI  
-**Localisation:** Paris
-
-**Contexte:**
-- Développement full-stack pour applications web d'entreprise
-
-**Technologies:**
-```
-JavaScript | Vue.js | Node.js | PostgreSQL
-```
-
-**Raison de la suppression:** Selon demande utilisateur "enlever tout ce qui concerne Armonie"
-
----
-
 ## ✅ Vérifications de Qualité PDF
 
 | Point | Vérification | Status |
 |------|--------------|--------|
 | **Titre** | "ANALYSTE CONCEPTEUR DEVELOPPEUR IBM i / AS400-C#.NET" | ✅ |
-| **Armonie Consult** | Complètement supprimée | ✅ |
 | **Nombre d'expériences** | 4 (au lieu de 5) | ✅ |
 | **Ordre des expériences** | IBM i > C#.NET > Web | ✅ |
 | **Lisibilité texte** | 100% des textes noirs (#000000) | ✅ |
@@ -210,7 +189,7 @@ JavaScript | Vue.js | Node.js | PostgreSQL
 ```
 CV_PRINT_OPTIMAL.html
 ├── Ligne 220: Titre changé
-└── Lignes 383-397: Armonie Consult supprimée
+└── Expériences mises à jour
 ```
 
 ### Statistiques de Changement
@@ -221,7 +200,6 @@ CV_PRINT_OPTIMAL.html
 ### Commit Git
 ```
 Commit Hash: 0dafe46
-Message: "Update: Change title and remove Armonie Consult"
 Fichier: CV_PRINT_OPTIMAL.html
 Date: 22/11/2026 16:25
 ```
@@ -247,7 +225,6 @@ Date: 22/11/2026 16:25
 - [ ] Ajouter certifications si applicable
 
 ### À Éviter
-- ❌ Ne pas réajouter Armonie Consult
 - ❌ Ne pas revenir au titre générique
 - ❌ Ne pas supprimer expériences actuelles
 

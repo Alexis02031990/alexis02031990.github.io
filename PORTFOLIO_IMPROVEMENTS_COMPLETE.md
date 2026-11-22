@@ -13,7 +13,7 @@
 - ✅ Bouton "Télécharger CV" positionné côté droit
 - ✅ **NOUVEAU** : Badge vert "Actuellement en CDI chez Toyota" sous le titre
   - Affichage professionnel avec icône ✓
-  - Texte correctif appliqué (Toyota, pas Armonie)
+  - Texte actualisé pour Toyota
   - Couleur verte pour indiquer le statut actif
 
 ### 3. **Noms d'Entreprises avec Couleurs Distinctes** 🎨
