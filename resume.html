@@ -16,7 +16,7 @@
     <link href="css/company-styles.css" rel="stylesheet" />
     <link href="css/print-styles.css" rel="stylesheet" media="print" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2500102972187583"
@@ -462,57 +462,24 @@ url('assets/image.jpg');">
                     e.preventDefault();
                     console.log("🔵 Clic sur PDF détecté");
                     
-                    // Afficher un message de chargement
-                    const originalText = this.textContent;
-                    this.textContent = "Génération en cours...";
-                    this.disabled = true;
+                    // Ouvrir la version imprimable en nouvelle fenêtre
+                    const pdfWindow = window.open('CV_PDF_Imprimable.html', '_blank');
                     
-                    const element = document.getElementById('experience-content');
-                    console.log("Élément à convertir:", element);
-                    
-                    if (!element) {
-                        console.error("❌ Élément 'experience-content' non trouvé!");
-                        alert("Erreur: Contenu non trouvé");
-                        downloadPdfBtn.textContent = originalText;
-                        downloadPdfBtn.disabled = false;
-                        return;
-                    }
-                    
-                    // Vérifier que html2pdf existe
-                    if (typeof html2pdf === 'undefined') {
-                        console.error("❌ html2pdf non chargé!");
-                        alert("Erreur: Librairie PDF non chargée. Utilisez la version Word à la place.");
-                        downloadPdfBtn.textContent = originalText;
-                        downloadPdfBtn.disabled = false;
-                        return;
-                    }
-                    
-                    setTimeout(() => {
-                        try {
-                            const opt = {
-                                margin: 10,
-                                filename: 'CV_Alexis_NGUEFACK.pdf',
-                                image: { type: 'jpeg', quality: 0.98 },
-                                html2canvas: { scale: 2 },
-                                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+                    if (pdfWindow) {
+                        console.log("✅ Version imprimable ouverte!");
+                        
+                        // Après 2 secondes, proposer d'imprimer
+                        setTimeout(() => {
+                            pdfWindow.focus();
+                            // Afficher un message
+                            pdfWindow.onload = function() {
+                                alert('📋 La version optimisée pour PDF s\'est ouverte!\n\n👉 Maintenant faites:\n1. Ctrl + P (ou Imprimer)\n2. Cherchez "Enregistrer en PDF"\n3. Cliquez "Enregistrer"\n\nC\'est tout! ✅');
                             };
-                            
-                            console.log("🔄 Génération du PDF...");
-                            html2pdf().set(opt).from(element).save();
-                            console.log("✅ PDF généré avec succès!");
-                            
-                            // Restaurer le bouton après 1 seconde
-                            setTimeout(() => {
-                                downloadPdfBtn.textContent = originalText;
-                                downloadPdfBtn.disabled = false;
-                            }, 1000);
-                        } catch (error) {
-                            console.error("❌ Erreur PDF:", error);
-                            alert("⚠️ La génération PDF a échoué.\n\nConseil : Utilisez plutôt la version Word qui est parfaitement formatée!");
-                            downloadPdfBtn.textContent = originalText;
-                            downloadPdfBtn.disabled = false;
-                        }
-                    }, 300);
+                        }, 1500);
+                    } else {
+                        console.error("❌ Impossible d'ouvrir la fenêtre!");
+                        alert("⚠️ Impossible d'ouvrir le PDF.\n\nUtilisez plutôt la version Word qui est garantie de fonctionner!");
+                    }
                 });
             } else {
                 console.error("❌ Bouton 'download-pdf' non trouvé!");
