@@ -1,0 +1,728 @@
+/* ======================================================================
+   DESIGN MODERNE ET PROFESSIONNEL - PORTFOLIO ALEXIS NGUEFACK
+   ====================================================================== */
+
+:root {
+  /* Couleurs principales - Palette professionnelle */
+  --primary: #0f3460;
+  --primary-light: #1e5a96;
+  --secondary: #e94560;
+  --accent: #16c784;
+  --light-bg: #f8fafc;
+  --dark-bg: #1a202c;
+  --border-color: #e2e8f0;
+  --text-dark: #1a202c;
+  --text-light: #64748b;
+  --text-muted: #94a3b8;
+  --white: #ffffff;
+  
+  /* Gradients modernes */
+  --gradient-primary: linear-gradient(135deg, #0f3460 0%, #1e5a96 100%);
+  --gradient-accent: linear-gradient(135deg, #16c784 0%, #0f3460 100%);
+  --gradient-secondary: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+  
+  /* Ombres professionnelles */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.15);
+  
+  /* Transitions fluides */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ======================================================================
+   BARRE DE NAVIGATION - STICKY ET MODERNE
+   ====================================================================== */
+.navbar {
+  background: var(--white) !important;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-normal);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-lg);
+  padding: 0.5rem 0 !important;
+}
+
+.navbar-brand {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
+  transition: var(--transition-fast);
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.nav-link {
+  font-weight: 600 !important;
+  color: var(--text-dark) !important;
+  position: relative;
+  margin: 0 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
+  transition: var(--transition-fast);
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--secondary) !important;
+  transform: translateY(-2px);
+}
+
+/* ======================================================================
+   SECTION HEADER - HERO SECTION
+   ====================================================================== */
+header {
+  background: var(--light-bg);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0) 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(15, 52, 96, 0.1) 0%, rgba(15, 52, 96, 0) 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(20px); }
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: 15px;
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+}
+
+.feature-icon:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: var(--shadow-xl);
+}
+
+.profile-container {
+  position: relative;
+  animation: slideInUp 0.8s ease forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-img {
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition-normal);
+  object-fit: cover;
+  border: 4px solid var(--white);
+  display: block;
+}
+
+.profile-img:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 20px 40px rgba(15, 52, 96, 0.3);
+}
+
+/* ======================================================================
+   CARTES (CARDS) - DESIGN MODERNE
+   ====================================================================== */
+.card {
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border-radius: 12px !important;
+  transition: var(--transition-normal);
+  overflow: hidden;
+  background: var(--white) !important;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--secondary) !important;
+}
+
+.card-body {
+  padding: 2rem !important;
+}
+
+/* ======================================================================
+   TYPOGRAPHIE - HIÉRARCHIE VISUELLE
+   ====================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-secondary);
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+h4 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.text-gradient {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ======================================================================
+   BOUTONS - STYLES MODERNES
+   ====================================================================== */
+.btn {
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: var(--transition-normal) !important;
+  border: none !important;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary) !important;
+  color: var(--white) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg) !important;
+  color: var(--white) !important;
+}
+
+.btn-secondary {
+  background: var(--gradient-secondary) !important;
+  color: var(--white) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg) !important;
+  color: var(--white) !important;
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary) !important;
+  color: var(--primary) !important;
+  background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--primary) !important;
+  color: var(--white) !important;
+  transform: translateY(-3px);
+}
+
+/* ======================================================================
+   SECTIONS - ESPACEMENT ET MISE EN PAGE
+   ====================================================================== */
+section {
+  padding: 4rem 0;
+  position: relative;
+}
+
+section.bg-light-gray {
+  background: var(--light-bg);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.section-title h2 {
+  display: inline-block;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================================
+   EXPÉRIENCE ET CV
+   ====================================================================== */
+.experience-card {
+  background: linear-gradient(135deg, var(--white) 0%, #f8fafc 100%);
+  border-left: 4px solid var(--gradient-secondary);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.experience-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateX(5px);
+}
+
+.experience-card .company-name {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-card .position {
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.experience-card .date {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.experience-card ul {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.experience-card li {
+  color: var(--text-light);
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.experience-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* ======================================================================
+   PROJETS - GRID ET HOVER EFFECTS
+   ====================================================================== */
+.project-card {
+  background: var(--white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-info {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background: var(--light-bg);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+}
+
+.tech-tag:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+/* ======================================================================
+   SKILLS / COMPÉTENCES
+   ====================================================================== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-item {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.skill-item:hover {
+  border-color: var(--secondary);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.skill-name {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+/* ======================================================================
+   FOOTER - PROFESSIONNEL
+   ====================================================================== */
+footer {
+  background: var(--dark-bg);
+  color: var(--white);
+  padding: 3rem 0 1rem;
+  margin-top: auto;
+}
+
+footer h3 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+  transform: translateX(3px);
+  display: inline-block;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  transition: var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: var(--secondary);
+  transform: translateY(-3px);
+  border-color: var(--secondary);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+/* ======================================================================
+   RESPONSIVITÉ - MOBILE FIRST
+   ====================================================================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .nav-link {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================================================================
+   ANIMATIONS GLOBALES
+   ====================================================================== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ======================================================================
+   UTILITAIRES
+   ====================================================================== */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-5 { margin-top: 3rem; }
+.mb-5 { margin-bottom: 3rem; }
+.my-5 { margin-top: 3rem; margin-bottom: 3rem; }
+
+.pt-5 { padding-top: 3rem; }
+.pb-5 { padding-bottom: 3rem; }
+
+.opacity-75 { opacity: 0.75; }
+.opacity-50 { opacity: 0.5; }

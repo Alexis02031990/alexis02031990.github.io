@@ -1,0 +1,608 @@
+/* ======================================================================
+   DESIGN AMÉLIORÉ ET PROFESSIONNEL - PORTFOLIO ALEXIS NGUEFACK
+   ====================================================================== */
+
+/* Variables de couleur modernes */
+:root {
+  /* Couleurs principales */
+  --primary-color: #0f3460;
+  --secondary-color: #e94560;
+  --accent-color: #16c784;
+  --light-bg: #f7f9fc;
+  --dark-text: #1a202c;
+  --light-text: #718096;
+  
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #0f3460 0%, #533483 100%);
+  --gradient-accent: linear-gradient(135deg, #16c784 0%, #0f3460 100%);
+  
+  /* Ombres professionnelles */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.20);
+  
+  /* Espacements */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
+/* ======================================================================
+   BARRE DE NAVIGATION AMÉLIORÉE
+   ====================================================================== */
+.navbar {
+  background: white !important;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  padding: 1rem 0 !important;
+}
+
+.navbar:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link {
+  font-weight: 600 !important;
+  color: var(--dark-text) !important;
+  position: relative;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--secondary-color);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+  transform: translateY(-2px);
+}
+
+/* ======================================================================
+   SECTION HEADER AMÉLIORÉE
+   ====================================================================== */
+header {
+  background: var(--light-bg) !important;
+}
+
+.feature {
+  width: 60px !important;
+  height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--gradient-primary) !important;
+  border-radius: 15px !important;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Profile image enhancement */
+.profile {
+  position: relative !important;
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-img {
+  border-radius: 20px !important;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ======================================================================
+   CARTES (CARDS) AMÉLIORÉES
+   ====================================================================== */
+.card {
+  border: none !important;
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: var(--shadow-md) !important;
+  background: white !important;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.card-body {
+  padding: 2rem !important;
+}
+
+/* En-tête des cartes */
+.card .bg-dark {
+  background: var(--gradient-primary) !important;
+  border-radius: 12px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.card .bg-dark::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(20px, 20px); }
+}
+
+.card h3 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.5px;
+}
+
+/* ======================================================================
+   BADGES ET COMPÉTENCES
+   ====================================================================== */
+.badge {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 50px !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.badge:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.badge.bg-primary {
+  background: var(--gradient-accent) !important;
+  color: white !important;
+}
+
+.badge.bg-secondary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+}
+
+.badge.bg-danger {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+  color: white !important;
+}
+
+/* ======================================================================
+   LISTES ET TEXTE AMÉLIORÉS
+   ====================================================================== */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.card ul li {
+  padding: 0.75rem 0 0.75rem 2rem;
+  position: relative;
+  color: var(--light-text);
+  line-height: 1.8;
+  transition: all 0.3s ease;
+}
+
+.card ul li:hover {
+  color: var(--dark-text);
+  transform: translateX(8px);
+}
+
+.card ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.card ul li:hover::before {
+  color: var(--accent-color);
+  transform: translateX(5px);
+}
+
+/* ======================================================================
+   SECTIONS
+   ====================================================================== */
+.section-experience,
+.section-education,
+.section-formation,
+.section-competences {
+  margin: 3rem 0;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.section-experience {
+  animation-delay: 0.1s;
+}
+
+.section-education {
+  animation-delay: 0.2s;
+}
+
+.section-formation {
+  animation-delay: 0.3s;
+}
+
+.section-competences {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Titres de sections */
+h2 {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+h2.text-secondary::after {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ======================================================================
+   TEXTE GRADIENTS
+   ====================================================================== */
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  display: inline-block;
+}
+
+strong.text-gradient {
+  font-size: 1.05rem;
+  display: block;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* ======================================================================
+   BOUTONS AMÉLIORÉS
+   ====================================================================== */
+.btn {
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 2rem !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  position: relative;
+  overflow: hidden !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: var(--gradient-accent) !important;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: var(--gradient-primary) !important;
+  color: white !important;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ======================================================================
+   LIEN DE TÉLÉCHARGEMENT CV
+   ====================================================================== */
+#download-cv {
+  background: var(--gradient-secondary) !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--shadow-md) !important;
+  position: relative;
+}
+
+#download-cv::after {
+  content: '↓';
+  position: absolute;
+  right: 1.5rem;
+  transition: transform 0.3s ease;
+  font-weight: bold;
+}
+
+#download-cv:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover) !important;
+}
+
+#download-cv:hover::after {
+  transform: translateY(5px);
+}
+
+/* ======================================================================
+   LOGO À DROITE
+   ====================================================================== */
+.logo-right {
+  height: 40px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1);
+  margin-left: auto;
+  display: inline-block;
+}
+
+.card:hover .logo-right {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ======================================================================
+   RESPONSIVE DESIGN
+   ====================================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0 !important;
+  }
+  
+  .navbar-brand {
+    font-size: 1.25rem !important;
+  }
+  
+  .nav-link {
+    font-size: 0.75rem;
+    margin: 0.5rem 0;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .nav-link:hover {
+    color: var(--secondary-color) !important;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .badge {
+    font-size: 0.75rem !important;
+    padding: 0.4rem 0.8rem !important;
+    margin: 0.25rem;
+  }
+  
+  .card ul li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-img {
+    border-radius: 15px !important;
+  }
+  
+  .badge {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.6rem !important;
+  }
+}
+
+/* ======================================================================
+   ANIMATIONS SPÉCIALES
+   ====================================================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.profile:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Pulsation subtile */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.feature:hover {
+  animation: pulse 1s ease-in-out;
+}
+
+/* ======================================================================
+   MODE SOMBRE (OPTIONNEL - à activer si souhaité)
+   ====================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light-bg: #1a202c;
+    --dark-text: #f7fafc;
+    --light-text: #cbd5e0;
+  }
+  
+  .navbar {
+    background: #2d3748 !important;
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .card {
+    background: #2d3748 !important;
+  }
+  
+  .card-body {
+    color: var(--light-text);
+  }
+  
+  header {
+    background: #1a202c !important;
+  }
+}
+
+/* ======================================================================
+   IMPRESSION
+   ====================================================================== */
+@media print {
+  .navbar,
+  #download-cv,
+  .dots-1, .dots-2, .dots-3, .dots-4 {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+  
+  .card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
